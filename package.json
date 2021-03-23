@@ -1,0 +1,22 @@
+{
+  "name": "pognali",
+  "private": true,
+  "description": "Проект вёрстки для портфолио",
+  "devDependencies": {
+    "autoprefixer": "10.0.5",
+    "browser-sync": "2.26.14",
+    "gulp": "4.0.2",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0"
+  },
+  "scripts": {
+    "start": "gulp default"
+  },
+  "engines": {
+    "node": "14.15.0"
+  },
+  "dependencies": {
+    "postcss": "^8.1.7"
+  }
+}
