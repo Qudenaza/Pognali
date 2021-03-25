@@ -1,96 +1,10 @@
-// .intro {
-//   position: relative;
-
-//   min-height: 569px;
-//   padding: 40px 0;
-
-//   background-color: $basic-blue;
-//   background-image: url("../img/globe-back-mobile.jpg");
-//   background-repeat: no-repeat;
-//   background-position: 0 -50px;
-
-//   @media (min-width: 768px) {
-//     background-color: $special-blue;
-//     background-image: url("../img/globe-back-tablet.jpg");
-//     background-position: 0 252px;
-//   }
-
-//   @media (min-width: 1440px) {
-//     background-image: url("../img/globe-back-desktop.png");
-//     background-position: 0 -29%;
-//   }
-
-//   &::before {
-//     position: absolute;
-//     content: "";
-//     top: 43%;
-
-//     width: 100%;
-//     height: 200px;
-
-//     background-color: $basic-blue;
-
-//     @media (min-width: 768px) {
-//       display: none;
-//     }
-//   }
-
-//   @media (min-width: 768px) {
-//     padding: 26px 0;
-//   }
-// }
-
-// .intro__slogan {
-//   display: block;
-//   padding: 0 10px;
-
-//   font-size: 36px;
-//   line-height: 40px;
-//   font-weight: 700;
-//   color: $basic-white;
-//   text-align: center;
-
-//   @media (min-width: 768px) {
-//     padding: 0 125px;
-
-//     font-size: 60px;
-//     line-height: 70px;
-//   }
-
-//   @media (min-width: 1440px) {
-//     width: 500px;
-//     padding: 31px 0 0 88px;
-
-//     text-align: left;
-//   }
-// }
-
-// .intro__illustration {
-//   width: 192px;
-//   height: 255px;
-//   margin: 13px 0 0 55px;
-
-//   @media (min-width: 768px) {
-//     width: 372px;
-//     height: 451px;
-//     margin: 38px 0 0 246px;
-//   }
-
-//   @media (min-width: 1440px) {
-//     width: 431px;
-//     height: 640px;
-
-//     margin: -22.3% 0 0 41.5%;
-//   }
-// }
-
 .intro {
-  min-height: 2000px;
+  padding-bottom: 39px;
 
   background-color: $basic-blue;
   background-image: url("../img/globe-back-mobile.jpg");
   background-repeat: no-repeat;
-  background-position: 0 -73px;
+  background-position: 0 -54px;
   background-size: 100% 477px;
   border-top: 1px solid transparent;
 
@@ -121,7 +35,7 @@
 
   @media (min-width: 1440px) {
     grid-template-columns: 1.5fr 1fr 1fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(2, 282px);
     grid-template-areas:
       "slogan illustration quote"
       "steps steps steps";
@@ -131,7 +45,7 @@
 .intro__slogan {
   display: block;
   max-width: 238px;
-  margin: 16px auto 0 auto;
+  margin: 36px auto 0 auto;
 
   font-size: 36px;
   line-height: 40px;
@@ -337,7 +251,7 @@
   @media (min-width: 1440px) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    margin-top: -267px;
+    margin-top: 91px;
     padding: 0 20px;
   }
 }

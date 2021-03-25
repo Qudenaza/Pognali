@@ -1,0 +1,38 @@
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $special-orange;
+
+  @media (min-width: 768px) {
+    font-size: 45px;
+  }
+}
+
+.section-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 28px;
+    line-height: 33px;
+
+    &--bold {
+      font-size: 21px;
+      line-height: 25px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    line-height: 33px;
+
+    &--bold {
+      line-height: 24px;
+    }
+  }
+}

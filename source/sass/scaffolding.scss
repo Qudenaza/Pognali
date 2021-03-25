@@ -12,6 +12,12 @@
 
 .page__body {
   font-family: $main-font;
+
+  background-color: $page-background;
+}
+
+.page__main {
+  height: 2000px;
 }
 
 .container {

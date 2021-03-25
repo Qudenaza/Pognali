@@ -1,0 +1,58 @@
+.button {
+  position: relative;
+
+  padding: 21px 23px 23px 23px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: $blue-button;
+
+  background-color: $basic-yellow;
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+
+  @media (min-width: 768px) {
+    padding: 26px 25px 30px 32px;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    border-radius: 20px;
+  }
+
+  &:hover {
+    background-color: $special-yellow-dark;
+  }
+
+  &:active {
+    color: rgba($blue-button, 0.3);
+    background-color: $special-yellow-dark;
+
+    &::after {
+      opacity: 0.3;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 19px;
+
+    width: 14px;
+    height: 14px;
+
+    background-image: url("../img/icons/icon-triangle.svg");
+    background-repeat: no-repeat;
+
+    transform: translateY(-50%);
+
+    transition: opacity 0.3s ease;
+
+    @media (min-width: 768px) {
+      right: 32px;
+    }
+  }
+}

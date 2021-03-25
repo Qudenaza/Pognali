@@ -1,0 +1,349 @@
+.destinations {
+  padding: 68px 0 34px 0;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (min-width: 768px) {
+    padding: 78px 0 80px 0;
+
+    background-image: url("../img/destinations-background-tablet@1x.png");
+    background-repeat: no-repeat;
+    background-position: 92% 80px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-bottom: 138px;
+
+    background-position: 95% 90px;
+  }
+}
+
+.destinations__container {
+  @media (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.destinations__inner {
+  order: 1;
+
+  @media (min-width: 1440px) {
+    padding: 92px 0 0 142px;
+  }
+}
+
+.destinations__title {
+  margin-left: 25px;
+
+  @media (min-width: 768px) {
+    margin-left: 33px;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0;
+  }
+}
+
+.destinations__text {
+  max-width: 195px;
+  margin: 21px 0 0 25px;
+
+  @media (min-width: 321px) {
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 350px;
+    margin: 70px 0 0 35px;
+  }
+
+  @media (min-width: 769px) {
+    max-width: 100%;
+    margin: 70px 0 0 35px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 350px;
+    margin: 70px 0 0 0;
+  }
+}
+
+.destinations__list {
+  display: grid;
+  grid-gap: 10px;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  margin-top: 61px;
+
+  @media (min-width: 768px) {
+    position: relative;
+
+    grid-template-columns: repeat(auto-fill, minmax(616px, 1fr));
+    margin-top: 107px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: -38px;
+
+      width: 141px;
+      height: 141px;
+
+      background-color: $special-blue-ellipse;
+
+      border-radius: 20px;
+
+      @media (min-width: 1440px) {
+        left: -73px;
+        top: -71px;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    display: block;
+    margin: 82px 0 0 91px;
+    order: -1;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 81px;
+
+      background-image: url("../img/fade-desktop.png");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.destination__item {
+  justify-self: normal;
+  align-self: flex-end;
+}
+
+.destinations__card {
+  position: relative;
+
+  width: 270px;
+  height: 190px;
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 616px;
+    height: 140px;
+
+    border-radius: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 560px;
+    margin-bottom: 10px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 86px;
+    left: 25px;
+    z-index: 1;
+
+    width: 35px;
+    height: 24px;
+
+    background-repeat: no-repeat;
+
+    @media (min-width: 768px) {
+      left: inherit;
+      right: 150px;
+      top: 17px;
+
+      width: 70px;
+      height: 47px;
+
+      border-radius: 7px;
+    }
+
+    @media (min-width: 1440px) {
+      right: 152px;
+      top: 23px;
+    }
+  }
+
+  &--thailand::before {
+    background-image: url("../img/flag-thailand-mobile.jpg");
+
+    @media (min-width: 768px) {
+      background-image: url("../img/flag-thailand-tablet.jpg");
+    }
+  }
+
+  &--france::before {
+    background-image: url("../img/flag-france-mobile.jpg");
+
+    @media (min-width: 768px) {
+      background-image: url("../img/flag-france-tablet.jpg");
+    }
+  }
+
+  &--czech::before {
+    background-image: url("../img/flag-czech-mobile.jpg");
+
+    @media (min-width: 768px) {
+      background-image: url("../img/flag-czech-tablet.jpg");
+    }
+  }
+}
+
+.destinations__image {
+  margin-top: -1px;
+}
+
+.destinations__details {
+  position: relative;
+
+  display: flex;
+  height: 89px;
+  align-items: baseline;
+  margin-top: -15px;
+  padding: 24px;
+
+  background-color: $basic-white;
+  border-radius: 10px;
+
+  @media (min-width: 768px) {
+    height: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0;
+    padding: 27px 29px;
+
+    border-radius: 0;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 20px 30px;
+  }
+}
+
+.destinations__wrapper {
+  width: 162px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.destinations__caption {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 21px;
+  color: $basic-black;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.destinations__quote {
+  display: inline-block;
+  vertical-align: middle;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: rgba($special-grey, 0.3);
+
+  @media (min-width: 768px) {
+    margin-top: 6px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.destinations__views {
+  position: relative;
+
+  padding-left: 18px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba($basic-blue, 0.3);
+
+  @media (min-width: 768px) {
+    margin-top: 20px;
+    padding-left: 29px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 26px;
+    padding-left: 32px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+
+    width: 11px;
+    height: 12px;
+
+    background-image: url("../img/icons/icon-user.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    transform: translateY(-50%);
+
+    @media (min-width: 768px) {
+      width: 18px;
+      height: 20px;
+    }
+  }
+}
+
+.destinations__button {
+  display: block;
+  max-width: 400px;
+  margin-top: 22px;
+
+  &--desktop {
+    display: none;
+
+    @media (min-width: 1440px) {
+      display: block;
+      width: 276px;
+      margin-top: 102px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    max-width: 619px;
+    margin: 37px 0 0 34px;
+    padding: 28px 25px 30px 33px;
+  }
+
+  @media (min-width: 769px) {
+    margin: 28px auto 0 auto;
+  }
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+}

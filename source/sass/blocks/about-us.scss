@@ -1,0 +1,100 @@
+.about-us {
+  min-height: 353px;
+  padding: 30px 24px;
+
+  background-color: $basic-blue-font;
+  background-image: url("../img/about-us-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  @media (min-width: 768px) {
+    min-height: 741px;
+    padding: 103px 34px 20px 34px;
+
+    background-image: url("../img/about-us-tablet@1x.png");
+    background-position: 83% 56px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    min-height: 751px;
+    padding: 137px 34px 20px 89px;
+
+    background-image: url("../img/about-us-desktop@1x.png");
+    background-position: 93% 86px;
+  }
+}
+
+.about-us__container {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -67px;
+    left: -29px;
+    z-index: 0;
+
+    display: none;
+    width: 212px;
+    height: 212px;
+
+    background-color: $blue-figure;
+    border-radius: 20px;
+
+    @media (min-width: 1440px) {
+      display: block;
+    }
+  }
+}
+
+.about-us__title {
+  position: relative;
+  z-index: 1;
+}
+
+.about-us__text {
+  position: relative;
+  z-index: 1;
+
+  max-width: 400px;
+  margin-top: 20px;
+
+  color: $basic-white;
+
+  @media (min-width: 768px) {
+    max-width: 300px;
+    margin-top: 53px;
+
+    &--bold {
+      margin-top: 31px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 640px;
+    margin-top: 70px;
+
+    &--bold {
+      max-width: 470px;
+      margin-top: 38px;
+    }
+  }
+}
+
+.about-us__button {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+    margin-top: 55px;
+    min-width: 276px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 87px;
+  }
+}

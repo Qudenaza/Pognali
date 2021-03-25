@@ -1,9 +1,5 @@
 .header {
-  min-height: 73px;
-
   background-color: $basic-blue;
-
-  transition: all 0.1s ease;
 
   @media (min-width: 768px) {
     background-color: $special-blue;
@@ -22,9 +18,17 @@
 
     background-color: $basic-white;
 
+    transition: all 0.3s ease;
+
     & .page-nav {
       @media (min-width: 1440px) {
-        padding: 25px 20px;
+        padding: 19px 20px;
+      }
+    }
+
+    & .page-nav--open {
+      @media (min-width: 768px) {
+        padding: 40px;
       }
     }
 
@@ -62,14 +66,14 @@
     }
 
     & + .page__main {
-      padding-top: 73px;
+      padding-top: 53px;
 
       @media (min-width: 768px) {
-        padding-top: 104px;
+        padding-top: 130px;
       }
 
       @media (min-width: 1440px) {
-        padding-top: 105px;
+        padding-top: 146px;
       }
     }
   }
