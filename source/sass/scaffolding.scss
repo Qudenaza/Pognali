@@ -56,3 +56,60 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+[tooltip] {
+  position: relative;
+
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::before,
+  &::after {
+    transition: opacity 0.3s ease;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    z-index: 2;
+
+    border-width: 0 8px 10px 8px;
+    border-style: solid;
+    border-color: $transparent-color $transparent-color $basic-tooltip
+      $transparent-color;
+    opacity: 0;
+
+    transform: translateX(-50%);
+  }
+
+  &::after {
+    content: attr(tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    z-index: 2;
+
+    min-width: 80px;
+    padding: 18px 25px;
+
+    background: $basic-tooltip;
+
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: $basic-white;
+    white-space: nowrap;
+
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(100%);
+  }
+}

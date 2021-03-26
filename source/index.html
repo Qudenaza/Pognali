@@ -71,7 +71,7 @@
     </div>
   </header>
   <main class="page__main">
-    <section class="intro"> 
+    <section class="intro">
       <h1 class="visually-hidden">Вступительная секция сайта</h1>
       <div class="intro__container container">
         <strong class="intro__slogan">В путешествие с крутыми попутчиками!</strong>
@@ -102,10 +102,10 @@
     <section class="about-us">
       <div class="about-us__container container">
         <h2 class="about-us__title section-title">О сервисе</h2>
-        <p class="about-us__text section-text">Любое путешествие веселее с попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих. 
+        <p class="about-us__text section-text">Любое путешествие веселее с попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих.
         </p>
         <p class="about-us__text about-us__text--bold section-text section-text--bold">А если найдете кого-то близкого по духу — скорее зовите в совместный трип!</p>
-        <a href="#" class="about-us__button button">Подробнее</a>  
+        <a href="#" class="about-us__button button">Подробнее</a>
       </div>
     </section>
     <section class="destinations">
@@ -165,6 +165,111 @@
             <a href="#" class="destinations__button button">Показать все</a>
           </li>
         </ul>
+      </div>
+    </section>
+    <section class="companions">
+      <div class="companions__container container">
+        <div class="companions__inner">
+          <h2 class="companions__title section-title">Попутчики</h2>
+          <p class="companions__text section-text">Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут для хайкинга.</p>
+          <p class="companions__text companions__text--bold section-text section-text--bold">Теперь можно легко найти единомышленников!</p>
+          <a href="#" class="companions__button companions__button--desktop button">Показать всех</a>
+        </div>
+        <div class="companions__list">
+          <article class="user-card">
+            <div class="user-card__level">
+              <b class="user-card__label">99</b>
+              <span>level</span>
+            </div>
+            <div class="user-card__image">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/user-card-image-1-mobile@1x.png">
+                <img src="img/user-card-image-1-mobile@1x.png" alt="Иллюстрация путешественника" width="270" height="270">
+              </picture>
+            </div>
+            <div class="user-card__details">
+              <ul class="user-card__list user-card__list--flags">
+                <li class="user-card__flag" tooltip="Шри-Ланка">
+                  <img class="user-card__flag-image" src="img/flag-shrilanka.png" alt="Флаг Шри-Ланки" width="35" height="24">
+                </li>
+                <li class="user-card__flag" tooltip="Таиланд">
+                  <img class="user-card__flag-image" src="img/flag-thailand-mobile.jpg" alt="Флаг Таиланда" width="35" height="24">
+                </li>
+                <li class="user-card__flag" tooltip="Сейшелы">
+                  <img class="user-card__flag-image" src="img/flag-seyshels.png" alt="Флаг Сейшел" width="35" height="24">
+                </li>
+              </ul>
+              <a class="user-card__name" href="#" data-status="offline">Таня Фирсова</a>
+              <ul class="user-card__list user-card__list--tags">
+                <li class="user-card__tag">#ЗОЖ</li>
+                <li class="user-card__tag">#ПП</li>
+                <li class="user-card__tag">#Фитнес</li>
+                <li class="user-card__tag">#пляж</li>
+                <li class="user-card__tag">#авокадо</li>
+                <li class="user-card__tag">#смузи</li>
+              </ul>
+              <ul class="user-card__list user-card__list--type">
+                <li class="user-card__type user-card__type--plane" data-active tooltip="Авиаперелет">
+                  <img src="img/icons/icon-plane.svg" alt="Иконка самолета" width="18" height="19">
+                </li>
+                <li class="user-card__type user-card__type--bus" tooltip="Автотранспорт">
+                  <img src="img/icons/icon-bus.svg" alt="Иконка автобуса" width="17" height="19">
+                </li>
+                <li class="user-card__type user-card__type--bicycle" tooltip="Велосипед">
+                  <img src="img/icons/icon-bicycle.svg" alt="Иконка велосипедиста" width="24" height="24">
+                </li>
+                <li class="user-card__type user-card__type--run" tooltip="Пешком">
+                  <img src="img/icons/icon-run.svg" alt="Иконка бегущего человека" width="21" height="23">
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="user-card">
+            <div class="user-card__level">
+              <b class="user-card__label">80</b>
+              <span>level</span>
+            </div>
+            <div class="user-card__image">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/user-card-image-2-tablet@1x.png">
+                <img src="img/user-card-image-2-mobile@1x.png" alt="Иллюстрация путешественника" width="270" height="270">
+              </picture>
+            </div>
+            <div class="user-card__details">
+              <ul class="user-card__list user-card__list--flags">
+                <li class="user-card__flag" tooltip="Бельгия">
+                  <img class="user-card__flag-image" src="img/flag-belgium.png" alt="Флаг Бельгии" width="35" height="24">
+                </li>
+                <li class="user-card__flag" tooltip="Чехия">
+                  <img class="user-card__flag-image" src="img/flag-czech-mobile.jpg" alt="Флаг Чехии" width="35" height="24">
+                </li>
+              </ul>
+              <a class="user-card__name" href="#" data-status="online">Петя Демин</a>
+              <ul class="user-card__list user-card__list--tags">
+                <li class="user-card__tag">#бургер</li>
+                <li class="user-card__tag">#бар</li>
+                <li class="user-card__tag">#футбол</li>
+                <li class="user-card__tag">#концерт</li>
+                <li class="user-card__tag">#крафт</li>
+              </ul>
+              <ul class="user-card__list user-card__list--type">
+                <li class="user-card__type user-card__type--plane" data-active tooltip="Авиаперелет">
+                  <img src="img/icons/icon-plane.svg" alt="Иконка самолета" width="18" height="19">
+                </li>
+                <li class="user-card__type user-card__type--bus" data-active tooltip="Автотранспорт">
+                  <img src="img/icons/icon-bus.svg" alt="Иконка автобуса" width="17" height="19">
+                </li>
+                <li class="user-card__type user-card__type--bicycle" tooltip="Велосипед">
+                  <img src="img/icons/icon-bicycle.svg" alt="Иконка велосипедиста" width="24" height="24">
+                </li>
+                <li class="user-card__type user-card__type--run" data-active tooltip="Пешком">
+                  <img src="img/icons/icon-run.svg" alt="Иконка бегущего человека" width="21" height="23">
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <a href="#" class="companions__button button">Показать всех</a>
       </div>
     </section>
   </main>

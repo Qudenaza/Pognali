@@ -1,8 +1,11 @@
 .destinations {
+  position: relative;
+
   padding: 68px 0 34px 0;
 
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  background-color: $page-background;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 
   @media (min-width: 768px) {
     padding: 78px 0 80px 0;
@@ -10,6 +13,9 @@
     background-image: url("../img/destinations-background-tablet@1x.png");
     background-repeat: no-repeat;
     background-position: 92% 80px;
+
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
   }
 
   @media (min-width: 1440px) {
@@ -321,7 +327,7 @@
 .destinations__button {
   display: block;
   max-width: 400px;
-  margin-top: 22px;
+  margin-top: 13px;
 
   &--desktop {
     display: none;

@@ -1,0 +1,252 @@
+.user-card {
+  position: relative;
+
+  width: 270px;
+  height: 428px;
+
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+
+  @media (min-width: 768px) {
+    width: 285px;
+    height: 483px;
+
+    border-radius: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    &:hover {
+      box-shadow: 0 4px 9px 0 rgba($basic-black, 0.16);
+
+      & .user-card__image img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.user-card__level {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+
+  background-color: rgba($basic-black, 0.3);
+  background-image: url("../img/icons/icon-ellipse.svg");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+
+  & span {
+    position: relative;
+    top: 2px;
+    left: -1px;
+
+    font-size: 14px;
+    line-height: 14px;
+    color: $basic-white;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -2px;
+      left: -2px;
+
+      width: 30px;
+      height: 1px;
+
+      background-color: rgba($basic-white, 0.3);
+    }
+  }
+
+  @media (min-width: 768px) {
+    top: 20px;
+    left: 22px;
+  }
+}
+
+.user-card__label {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $basic-white;
+}
+
+.user-card__image {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+
+  & img {
+    transition: transform 1s ease;
+  }
+
+  @media (min-width: 768px) {
+    width: 285px;
+    height: 286px;
+  }
+}
+
+.user-card__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 158px;
+  padding: 17px;
+
+  background: $basic-white;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  @media (min-width: 768px) {
+    height: 198px;
+    padding-bottom: 25px;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.user-card__list {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &--flags {
+    margin-top: -26px;
+
+    @media (min-width: 768px) {
+      margin-top: -30px;
+    }
+  }
+
+  &--tags {
+    margin-top: 13px;
+
+    @media (min-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+
+  &--type {
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 14px;
+
+    @media (min-width: 768px) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.user-card__flag {
+  width: 35px;
+  height: 24px;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.user-card__name {
+  position: relative;
+
+  margin-top: 7px;
+
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: $blue-button;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 12px;
+
+    font-size: 24px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 12px;
+    left: -16px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    @media (min-width: 768px) {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &[data-status="offline"]::before {
+    background-color: $status-offline-color;
+  }
+
+  &[data-status="online"]::before {
+    background-color: $status-online-color;
+  }
+}
+
+.user-card__tag {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $special-grey;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+.user-card__type {
+  & img {
+    opacity: 0.15;
+  }
+
+  &[data-active] img {
+    opacity: 1;
+  }
+
+  &--plane {
+    margin-right: 17px;
+  }
+
+  &--bus {
+    margin-right: 12px;
+  }
+
+  &--bicycle {
+    margin-right: 8px;
+  }
+}
