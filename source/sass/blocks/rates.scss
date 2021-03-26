@@ -1,0 +1,269 @@
+.rates {
+  position: relative;
+
+  min-height: 503px;
+  margin-top: -40px;
+  padding: 90px 0 39px 25px;
+
+  background-color: $page-background;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    right: 25px;
+    top: 77px;
+
+    width: 100px;
+    height: 100px;
+
+    background-image: url("../img/rates-image-mobile.png");
+    background-repeat: no-repeat;
+
+    @media (min-width: 768px) {
+      bottom: 66px;
+      right: 85px;
+      top: inherit;
+      z-index: 2;
+    }
+
+    @media (min-width: 1440px) {
+      bottom: 36%;
+      right: 132px;
+
+      width: 198px;
+      height: 198px;
+
+      background-image: url("../img/rates-image-desktop.png");
+    }
+  }
+
+  @media (min-width: 768px) {
+    min-height: 616px;
+    padding: 120px 0 63px 0;
+  }
+
+  @media (min-width: 1440px) {
+    min-height: 818px;
+    padding: 152px 0 165px 0;
+  }
+}
+
+.rates__title {
+  display: flex;
+  align-items: center;
+
+  width: 107px;
+  height: 72px;
+
+  @media (min-width: 450px) {
+    width: auto;
+  }
+
+  @media (min-width: 768px) {
+    height: auto;
+    justify-content: center;
+  }
+}
+
+.rates__list {
+  position: relative;
+
+  margin-top: 46px;
+
+  @media (min-width: 768px) {
+    padding-left: 90px;
+    margin-top: 86px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      right: 0;
+      top: -40px;
+
+      width: 198px;
+      height: 285px;
+
+      background-color: rgba($special-blue-ellipse, 0.9);
+      border-radius: 20px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: 180px;
+    margin-top: 149px;
+    width: 85%;
+
+    &::before {
+      top: -48px;
+
+      width: 446px;
+      height: 300px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    width: 100%;
+  }
+}
+
+.rates__item {
+  position: relative;
+
+  width: 82%;
+  margin-bottom: 6px;
+  padding: 11px 0;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  color: $special-grey;
+
+  border-top: 1px solid $border-color;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 66px;
+    margin: 0;
+    padding: 13px 35px 13px 0;
+
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 10px 161px 14px 0;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &::before {
+    position: absolute;
+    content: "1";
+    right: -43px;
+    top: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+
+    color: $basic-white;
+
+    background-color: $special-orange;
+    border-radius: 50%;
+
+    @media (min-width: 768px) {
+      left: -90px;
+      top: 0;
+
+      width: 68px;
+      height: 68px;
+    }
+
+    @media (min-width: 1440px) {
+      top: -2px;
+    }
+  }
+
+  &--second::before {
+    content: "2";
+
+    background-color: $special-yellow-dark;
+  }
+
+  &--third::before {
+    content: "3";
+
+    background-color: $basic-yellow;
+  }
+}
+
+.rates__price {
+  display: block;
+  margin-top: 5px;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+    margin-top: 0;
+  }
+}
+
+.rates__link {
+  position: relative;
+
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 27px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  color: $blue-link;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: rgba($blue-link, 0.7);
+
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    color: rgba($blue-link, 0.3);
+
+    &::before {
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 60px;
+    padding-left: 90px;
+
+    font-size: 20px;
+    line-height: 20px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 21px;
+      top: -3px;
+      z-index: 1;
+
+      width: 26px;
+      height: 26px;
+
+      background-image: url("../img/icons/icon-businessman.svg");
+      background-repeat: no-repeat;
+
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: -25px;
+
+      width: 68px;
+      height: 68px;
+
+      background-color: $special-blue-ellipse;
+      border-radius: 50%;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin: 58px 0 0 90px;
+  }
+}
