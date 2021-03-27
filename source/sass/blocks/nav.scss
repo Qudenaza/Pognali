@@ -138,24 +138,6 @@
 
   transition: transform 0.3s ease;
 
-  &--contacts {
-    margin: 51px auto 0 auto;
-    max-width: 270px;
-
-    @media (min-width: 768px) {
-      max-width: 100%;
-      margin-top: 135px;
-    }
-
-    @media (min-width: 1440px) {
-      margin: 0 0 0 auto;
-
-      & .page-nav__item:not(:last-child) {
-        margin: 0;
-      }
-    }
-  }
-
   @media (min-width: 768px) {
     text-align: left;
   }
@@ -165,6 +147,27 @@
 
     transform: none;
   }
+}
+
+.page-nav__contacts {
+  margin-top: 48px;
+
+  & .contacts__span {
+    color: $basic-blue-font;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 136px;
+  }
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+}
+
+.page-nav__menu {
+  display: flex;
+  margin-left: auto;
 }
 
 .page-nav__item {
@@ -293,137 +296,55 @@
       display: none;
     }
   }
-}
 
-.page-nav__contact {
-  display: flex;
-  align-items: center;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
-  color: $basic-blue;
-  text-transform: uppercase;
-
-  @media (min-width: 768px) {
-    font-size: 28px;
-    line-height: 28px;
-  }
-}
-
-.page-nav__span {
-  margin-left: 16px;
-
-  @media (min-width: 768px) {
-    margin-left: 23px;
-  }
-
-  @media (min-width: 1440px) {
+  &--call,
+  &--mail {
     display: none;
-  }
-}
-
-.page-nav__icon {
-  position: relative;
-
-  display: block;
-  width: 45px;
-  height: 45px;
-
-  background-color: $blue-ellipse;
-  border-radius: 50%;
-
-  transition: all 0.3s ease;
-
-  @media (min-width: 768px) {
-    width: 68px;
-    height: 68px;
-  }
-
-  @media (min-width: 1440px) {
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
-  }
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 50%;
+    border-radius: 50px;
 
-    width: 18px;
+    &:hover {
+      background-color: $special-orange-hover;
+    }
 
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-    transform: translate(-50%, -50%);
-
-    transition: opacity 0.3s ease;
-
-    @media (min-width: 768px) {
-      width: 27px;
+    @media (min-width: 1440px) {
+      display: flex;
     }
   }
 
   &--call {
-    &::before {
-      height: 17px;
+    background-color: $special-orange;
 
-      background-image: url("../img/icons/icon-phone.svg");
-
-      @media (min-width: 768px) {
-        height: 26px;
-      }
-
-      @media (min-width: 1440px) {
-        width: 18px;
-        height: 18px;
-
-        background-image: url("../img/icons/icon-call.svg");
-      }
+    &:active svg {
+      opacity: 0.3;
     }
 
-    @media (min-width: 1440px) {
-      background-color: $special-orange;
+    & svg {
+      width: 18px;
+      height: 18px;
 
-      &:hover {
-        background-color: $special-orange-hover;
-      }
-
-      &:active::before {
-        opacity: 0.3;
-      }
+      transition: opacity 0.3s ease;
     }
   }
 
   &--mail {
-    &::before {
-      height: 12px;
+    background-color: $special-yellow-dark;
 
-      background-image: url("../img/icons/icon-mail-2.svg");
+    &:active {
+      background-color: $special-orange;
 
-      @media (min-width: 768px) {
-        height: 17px;
-      }
-
-      @media (min-width: 1440px) {
-        width: 16px;
-        height: 14px;
-
-        background-image: url("../img/icons/icon-mail.svg");
+      & svg {
+        opacity: 0.3;
       }
     }
 
-    @media (min-width: 1440px) {
-      background-color: $special-yellow-dark;
-
-      &:hover {
-        background-color: $special-orange;
-      }
-
-      &:active::before {
-        opacity: 0.3;
-      }
+    & svg {
+      width: 16px;
+      height: 14px;
     }
   }
 }
