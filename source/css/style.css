@@ -536,6 +536,98 @@ svg {
   background-color: #cccccc;
   transform: rotate(135deg); }
 
+.base-input {
+  padding: 20px 30px 24px 25px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #444444;
+  border-radius: 10px;
+  border: 4px solid #ffffff;
+  transition: all 0.3s ease; }
+  .base-input:hover {
+    background-color: #edeff6; }
+  .base-input:focus {
+    color: #ffffff;
+    background-color: transparent;
+    border-color: #ffffff; }
+    .base-input:focus::-moz-placeholder {
+      color: #ffffff; }
+    .base-input:focus:-ms-input-placeholder {
+      color: #ffffff; }
+    .base-input:focus::placeholder {
+      color: #ffffff; }
+  @media (min-width: 768px) {
+    .base-input {
+      padding: 17px 50px 24px 36px;
+      font-size: 24px;
+      line-height: 24px;
+      border-radius: 20px; } }
+  .base-input:focus {
+    outline: none; }
+  .base-input::-moz-placeholder {
+    opacity: 0.3; }
+  .base-input:-ms-input-placeholder {
+    opacity: 0.3; }
+  .base-input::placeholder {
+    opacity: 0.3; }
+
+.modal {
+  position: absolute;
+  z-index: 22;
+  padding: 25px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px 0 rgba(29, 46, 91, 0.14);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; }
+  .modal-opened {
+    opacity: 1;
+    pointer-events: all; }
+  @media (min-width: 768px) {
+    .modal {
+      padding: 50px 90px 90px 90px; } }
+  @media (min-width: 1140px) {
+    .modal {
+      padding: 50px; } }
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 59px;
+  margin: auto -25px -25px -25px;
+  background-color: #f3f4f8; }
+  @media (min-width: 768px) {
+    .modal__footer {
+      min-height: 108px;
+      margin: auto -90px -90px -90px; } }
+  @media (min-width: 1140px) {
+    .modal__footer {
+      margin: auto -50px -50px -50px; } }
+
+.modal__close {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1d2e5b;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease; }
+  .modal__close:active {
+    opacity: 0.3; }
+  @media (min-width: 768px) {
+    .modal__close {
+      font-size: 24px;
+      text-transform: none; } }
+
 .button {
   position: relative;
   padding: 21px 23px 23px 23px;
@@ -576,43 +668,6 @@ svg {
     @media (min-width: 768px) {
       .button::after {
         right: 32px; } }
-
-.base-input {
-  padding: 20px 30px 24px 25px;
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 18px;
-  color: #444444;
-  border-radius: 10px;
-  border: 4px solid #ffffff;
-  transition: all 0.3s ease; }
-  .base-input:hover {
-    background-color: #edeff6; }
-  .base-input:focus {
-    color: #ffffff;
-    background-color: transparent;
-    border-color: #ffffff; }
-    .base-input:focus::-moz-placeholder {
-      color: #ffffff; }
-    .base-input:focus:-ms-input-placeholder {
-      color: #ffffff; }
-    .base-input:focus::placeholder {
-      color: #ffffff; }
-  @media (min-width: 768px) {
-    .base-input {
-      padding: 17px 50px 24px 36px;
-      font-size: 24px;
-      line-height: 24px;
-      border-radius: 20px; } }
-  .base-input:focus {
-    outline: none; }
-  .base-input::-moz-placeholder {
-    opacity: 0.3; }
-  .base-input:-ms-input-placeholder {
-    opacity: 0.3; }
-  .base-input::placeholder {
-    opacity: 0.3; }
 
 .contacts__item {
   width: 270px; }
@@ -723,13 +778,13 @@ svg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
-    grid-template-areas: "slogan slogan" "quote illustration" "steps steps"; } }
+    grid-template-areas: "slogan slogan" "quote illustration" "steps steps"; } }
 
 @media (min-width: 1440px) {
   .intro__container {
     grid-template-columns: 1.5fr 1fr 1fr;
     grid-template-rows: repeat(2, 282px);
-    grid-template-areas: "slogan illustration quote" "steps steps steps"; } }
+    grid-template-areas: "slogan illustration quote" "steps steps steps"; } }
 
 .intro__slogan {
   display: block;
@@ -800,30 +855,6 @@ svg {
   width: 40px;
   height: 40px;
   border-radius: 50%; }
-  .intro__button--phone {
-    background-color: #ff8d30; }
-    .intro__button--phone::before {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: 50%;
-      width: 18px;
-      height: 18px;
-      background-image: url("../img/icons/icon-call.svg");
-      background-repeat: no-repeat;
-      transform: translate(-50%, -50%); }
-  .intro__button--mail {
-    background-color: #ffbd30; }
-    .intro__button--mail::before {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: 50%;
-      width: 18px;
-      height: 16px;
-      background-image: url("../img/icons/icon-mail.svg");
-      background-repeat: no-repeat;
-      transform: translate(-50%, -50%); }
 
 .intro__wrapper {
   position: relative;
@@ -1680,6 +1711,19 @@ svg {
   @media (min-width: 1920px) {
     .rates__list {
       width: 100%; } }
+  .rates__list--modal {
+    margin-top: 28px;
+    text-align: left; }
+    .rates__list--modal .rates__item {
+      padding-right: 0; }
+      .rates__list--modal .rates__item::before {
+        display: none; }
+    .rates__list--modal::before {
+      display: none; }
+    @media (min-width: 768px) {
+      .rates__list--modal {
+        margin-top: 47px;
+        padding: 0; } }
 
 .rates__item {
   position: relative;
@@ -1753,14 +1797,17 @@ svg {
   font-weight: 700;
   line-height: 16px;
   color: #132576;
+  border: none;
+  cursor: pointer;
   transition: all 0.3s ease; }
   .rates__link:hover {
     color: rgba(19, 37, 118, 0.7); }
     .rates__link:hover::before {
       opacity: 0.7; }
-  .rates__link:active {
-    color: rgba(19, 37, 118, 0.3); }
-    .rates__link:active::before {
+  .rates__link:active, .rates__link:focus {
+    color: rgba(19, 37, 118, 0.3);
+    outline: none; }
+    .rates__link:active::before, .rates__link:focus::before {
       opacity: 0.3; }
   @media (min-width: 768px) {
     .rates__link {
@@ -1791,6 +1838,26 @@ svg {
   @media (min-width: 1440px) {
     .rates__link {
       margin: 58px 0 0 90px; } }
+
+.rates__modal {
+  bottom: 6px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 443px; }
+  @media (min-width: 768px) {
+    .rates__modal {
+      bottom: 29px;
+      left: 40px;
+      right: 40px;
+      min-height: 526px; } }
+  @media (min-width: 1440px) {
+    .rates__modal {
+      bottom: 125px;
+      left: 50%;
+      max-width: 750px;
+      transform: translateX(-50%); } }
 
 .cta {
   position: relative;

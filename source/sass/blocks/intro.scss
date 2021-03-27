@@ -131,42 +131,6 @@
   height: 40px;
 
   border-radius: 50%;
-
-  &--phone {
-    background-color: $special-orange;
-    &::before {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: 50%;
-
-      width: 18px;
-      height: 18px;
-
-      background-image: url("../img/icons/icon-call.svg");
-      background-repeat: no-repeat;
-
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  &--mail {
-    background-color: $special-yellow-dark;
-    &::before {
-      position: absolute;
-      content: "";
-      top: 50%;
-      left: 50%;
-
-      width: 18px;
-      height: 16px;
-
-      background-image: url("../img/icons/icon-mail.svg");
-      background-repeat: no-repeat;
-
-      transform: translate(-50%, -50%);
-    }
-  }
 }
 
 .intro__wrapper {

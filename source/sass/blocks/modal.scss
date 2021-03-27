@@ -1,0 +1,75 @@
+.modal {
+  position: absolute;
+  z-index: 22;
+
+  padding: 25px;
+  overflow: hidden;
+
+  text-align: center;
+
+  border-radius: 20px;
+  background-color: $basic-white;
+  box-shadow: 0 2px 8px 0 rgba($blue-button, 0.14);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+
+  &-opened {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @media (min-width: 768px) {
+    padding: 50px 90px 90px 90px;
+  }
+
+  @media (min-width: 1140px) {
+    padding: 50px;
+  }
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 59px;
+  margin: auto -25px -25px -25px;
+
+  background-color: $modal-footer;
+
+  @media (min-width: 768px) {
+    min-height: 108px;
+    margin: auto -90px -90px -90px;
+  }
+
+  @media (min-width: 1140px) {
+    margin: auto -50px -50px -50px;
+  }
+}
+
+.modal__close {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $blue-button;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  transition: opacity 0.3s ease;
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    text-transform: none;
+  }
+}
