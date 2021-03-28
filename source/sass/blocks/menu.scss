@@ -1,0 +1,101 @@
+.menu {
+  position: relative;
+
+  justify-content: center;
+}
+
+.menu__button {
+  display: flex;
+  width: 190px;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 30px;
+  color: $basic-blue;
+  text-transform: uppercase;
+  text-align: center;
+
+  background-color: $basic-yellow;
+  border-radius: 25px;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $special-yellow-dark;
+  }
+
+  &:active {
+    background-color: $special-yellow-dark;
+    color: rgba($basic-blue, 0.3);
+  }
+
+  @media (min-width: 1440px) {
+    display: block;
+    width: 188px;
+    margin: 0;
+    order: 1;
+
+    font-size: 20px;
+
+    transform: none;
+  }
+
+  &--single {
+    padding: 10px 0;
+  }
+
+  &--call,
+  &--mail {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50px;
+
+    &:hover {
+      background-color: $special-orange-hover;
+    }
+
+    @media (min-width: 1440px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (min-width: 1440px) {
+      display: flex;
+    }
+  }
+
+  &--call {
+    background-color: $special-orange;
+
+    &:active svg {
+      opacity: 0.3;
+    }
+
+    & svg {
+      width: 18px;
+      height: 18px;
+
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &--mail {
+    background-color: $special-yellow-dark;
+
+    &:active {
+      background-color: $special-orange;
+
+      & svg {
+        opacity: 0.3;
+      }
+    }
+
+    & svg {
+      width: 16px;
+      height: 14px;
+    }
+  }
+}

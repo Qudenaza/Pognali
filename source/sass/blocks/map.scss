@@ -1,0 +1,147 @@
+.map__container {
+  position: relative;
+  z-index: 2;
+
+  padding: 30px 25px 20px 25px;
+  margin-top: -30px;
+  min-height: 238px;
+
+  background-color: $basic-yellow;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  @media (min-width: 768px) {
+    margin-top: -60px;
+    padding: 60px 75px 20px 75px;
+    min-height: 384px;
+
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 262px;
+    padding: 75px 100px 20px 249px;
+  }
+}
+
+.map__address {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  padding-left: 61px;
+  max-width: 250px;
+  margin-top: 31px;
+
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 22px;
+  color: $blue-button;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+    margin-top: 67px;
+    padding-left: 93px;
+
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 0;
+    margin-right: 148px;
+    padding-left: 120px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+
+    width: 45px;
+    height: 45px;
+
+    background-image: url("../img/icons/icon-mark.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: 768px) {
+      width: 68px;
+      height: 68px;
+    }
+
+    @media (min-width: 1440px) {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+.map__button {
+  display: block;
+  margin-top: 34px;
+  padding: 18px 19px 20px 19px;
+
+  color: $blue-button;
+
+  border: 3px solid $blue-button;
+  background-color: $transparent-color;
+
+  &:hover {
+    background-color: $basic-blue-font;
+
+    color: $basic-white;
+
+    &::after {
+      background-image: url("../img/icons/icon-triangle-white.svg");
+    }
+  }
+
+  &:active {
+    color: rgba($basic-white, 0.3);
+
+    &::after {
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: 80px;
+    margin-top: 65px;
+    padding: 23px 19px 20px 35px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 324px;
+    margin-top: 0;
+  }
+}
+
+.map__interactive {
+  height: 424px;
+  margin-top: -54px;
+
+  background-image: url("../img/background-map-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  @media (min-width: 768px) {
+    height: 581px;
+    margin-top: -47px;
+
+    background-image: url("../img/background-map-tablet.jpg");
+  }
+
+  @media (min-width: 1440px) {
+    height: 584px;
+    margin-top: -122px;
+
+    background-image: url("../img/background-map-desktop.jpg");
+  }
+}

@@ -124,13 +124,13 @@
   border-radius: 25px;
 }
 
-.intro__button {
-  position: relative;
+.intro__menu {
+  display: flex;
+  margin-top: -8px;
 
-  width: 40px;
-  height: 40px;
-
-  border-radius: 50%;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .intro__wrapper {
