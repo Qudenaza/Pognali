@@ -53,7 +53,7 @@
 }
 
 .companions__text {
-  margin-top: 20px;
+  margin-top: 21px;
   max-width: 220px;
 
   color: $basic-white;
@@ -92,7 +92,7 @@
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-gap: 10px;
   justify-items: center;
-  margin-top: 57px;
+  margin-top: 56px;
 
   @media (min-width: 768px) {
     padding: 5px 13px 0 13px;

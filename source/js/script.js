@@ -1,20 +1,18 @@
 // БУРГЕР МЕНЮ
-const nav = document.querySelector('.page-nav');
+const header = document.querySelector('.header');
 const toggle = document.querySelector('.toggle');
 
-nav.classList.remove('page-nav--nojs');
+// nav.classList.remove('page-nav--nojs');
 
 toggle.addEventListener('click', function () {
   toggle.classList.toggle('toggle--active');
 
-  nav.classList.toggle('page-nav--open')
-  nav.classList.toggle('page-nav--closed')
+  header.classList.toggle('header--open');
 });
 
 // ФИКСИРОВАННОЕ МЕНЮ
 
-let introSection = document.querySelector(".intro"),
- header = document.querySelector(".page__header");
+let introSection = document.querySelector(".intro");
 
 function onScroll() {
   window.addEventListener("scroll", callbackFunc);
@@ -23,12 +21,12 @@ function onScroll() {
     const y = window.pageYOffset;
 
     if (y > introSection.offsetHeight) {
-      header.classList.add("header__fix");
+      header.classList.add("header--fix");
     } else {
-      header.classList.remove("header__fix");
+      header.classList.remove("header--fix");
     }
   }
-}
+};
 
 window.onload = function() {
   onScroll();
@@ -49,3 +47,5 @@ modalClose.forEach(closeButton => {
 ratesModalOpen.addEventListener('click', function() {
   ratesModal.classList.add('modal-opened');
 })
+
+

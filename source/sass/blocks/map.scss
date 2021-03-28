@@ -69,7 +69,7 @@
 
     background-image: url("../img/icons/icon-mark.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 
     @media (min-width: 768px) {
       width: 68px;
@@ -126,6 +126,7 @@
 .map__interactive {
   height: 424px;
   margin-top: -54px;
+  overflow: hidden;
 
   background-image: url("../img/background-map-mobile.jpg");
   background-repeat: no-repeat;

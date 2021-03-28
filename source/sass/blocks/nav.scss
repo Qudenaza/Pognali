@@ -3,79 +3,33 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 19px 0;
+  // padding: 27px 25px 0 25px;
+
+  // @media (min-width: 768px) {
+  //   padding: 40px 40px 0 40px;
+  // }
+
+  // @media (min-width: 1440px) {
+  //   padding: 47px 20px;
+  // }
+
+  // @media (max-width: 767px) {
+  //   &--nojs .page-nav__wrapper {
+  //     height: 189px;
+  //   }
+
+  //   &--nojs .page-nav__list {
+  //     transform: translateY(0);
+  //   }
+
+  //   &--nojs .toggle {
+  //     display: none;
+  //   }
+  // }
 
   @media (min-width: 768px) {
-    padding: 40px 0;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 47px 20px;
-  }
-
-  @media (max-width: 767px) {
-    &--nojs .page-nav__wrapper {
-      height: 189px;
-    }
-
-    &--nojs .page-nav__list {
-      transform: translateY(0);
-    }
-
-    &--nojs .toggle {
-      display: none;
-    }
-  }
-}
-
-.page-nav--open {
-  width: calc(100% + 50px);
-  margin: 0 -25px 0 -25px;
-  overflow: hidden;
-  padding: 19px 25px;
-
-  background-color: $basic-white;
-
-  @media (min-width: 768px) {
-    width: calc(100% + 80px);
-    margin: 0 -40px 0 -40px;
-    padding: 40px;
-  }
-
-  & .page-nav__wrapper {
-    min-height: 516px;
-    padding-top: 61px;
-
-    @media (min-width: 768px) {
-      min-height: 780px;
-      padding-top: 68px;
-    }
-  }
-
-  & .page-nav__list,
-  & .menu__button,
-  & .page-nav__socials {
-    transform: translateY(0);
-  }
-
-  & .page-logo {
-    background-image: url("../img/page-logo-mobile-dark.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-    @media (min-width: 768px) {
-      width: 166px;
-
-      background-image: url("../img/page-logo-tablet-dark.png");
-    }
-  }
-
-  & picture {
-    display: none;
-
-    @media (min-width: 1440px) {
-      display: block;
-    }
+    margin: 0 auto;
+    max-width: 1440px;
   }
 }
 
@@ -85,20 +39,18 @@
 
   width: calc(100% + 50px);
   height: 0;
-  margin: 0 -25px 0 -25px;
+  margin: 20px -25px 0 -25px;
   padding: 0 25px;
   overflow: hidden;
 
   background-color: $basic-white;
 
-  transform: translateY(20px);
-
   transition: height 0.3s ease;
 
   @media (min-width: 768px) {
     width: calc(100% + 80px);
-    margin: 0 -40px 0 -40px;
-    padding: 0 97px;
+    margin: 20px -40px 0 -40px;
+    padding: 0 40px 0 96px;
   }
 
   @media (min-width: 1440px) {
@@ -138,6 +90,10 @@
     margin-right: 4px;
 
     font-size: 20px;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
   }
 
   & .menu__button--call,
@@ -154,7 +110,7 @@
   }
 
   @media (min-width: 1440px) {
-    margin: 0 0 0 auto;
+    margin: 3px 0 0 auto;
     order: 3;
   }
 }
@@ -184,19 +140,20 @@
 }
 
 .page-nav__list {
-  transform: translateY(-100%);
+  margin-top: 60px;
 
   list-style: none;
   text-align: center;
 
-  transition: transform 0.3s ease;
-
   @media (min-width: 768px) {
+    margin-top: 68px;
+
     text-align: left;
   }
 
   @media (min-width: 1440px) {
     display: flex;
+    margin: 0;
 
     transform: none;
   }
@@ -261,6 +218,7 @@
     &:hover {
       span {
         transform: translateY(-100%);
+        will-change: transform;
       }
     }
 
@@ -268,7 +226,7 @@
       position: relative;
 
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: top;
 
       transition: transform 0.3s;
 
@@ -297,6 +255,21 @@
 
   & .socials__social {
     background-color: $transparent-color;
+
+    &--vk svg {
+      width: 31px;
+      height: 16px;
+    }
+
+    &--fb svg {
+      width: 14px;
+      height: 28px;
+    }
+
+    &--insta svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   @media (min-width: 768px) {
@@ -306,48 +279,5 @@
 
   @media (min-width: 1440px) {
     display: none;
-  }
-}
-
-.page-nav__social {
-  display: block;
-
-  background-repeat: no-repeat;
-  background-size: 100%;
-
-  &--fb {
-    width: 11px;
-    height: 21px;
-
-    background-image: url("../img/icons/icon-facebook.svg");
-
-    @media (min-width: 768px) {
-      width: 14px;
-      height: 28px;
-    }
-  }
-
-  &--vk {
-    width: 23px;
-    height: 12px;
-
-    background-image: url("../img/icons/icon-vk.svg");
-
-    @media (min-width: 768px) {
-      width: 31px;
-      height: 16px;
-    }
-  }
-
-  &--insta {
-    width: 18px;
-    height: 18px;
-
-    background-image: url("../img/icons/icon-insta.svg");
-
-    @media (min-width: 768px) {
-      width: 24px;
-      height: 24px;
-    }
   }
 }
