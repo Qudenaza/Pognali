@@ -16,6 +16,12 @@
   background-color: $page-background;
 }
 
+.page__header,
+.page__main,
+.page-footer {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;

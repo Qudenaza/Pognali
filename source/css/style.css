@@ -40,6 +40,11 @@
   font-family: "BloggerSans", "Arial", sans-serif;
   background-color: #edeff6; }
 
+.page__header,
+.page__main,
+.page-footer {
+  overflow: hidden; }
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -1354,7 +1359,7 @@ svg {
     position: absolute;
     content: "";
     left: 0;
-    top: 62%;
+    top: 50%;
     width: 14px;
     height: 14px;
     background-image: url("../img/icons/icon-user.svg");
@@ -1622,7 +1627,7 @@ svg {
   .user-card__name::before {
     position: absolute;
     content: "";
-    top: 56%;
+    top: 50%;
     left: -16px;
     width: 6px;
     height: 6px;
