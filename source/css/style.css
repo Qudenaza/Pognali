@@ -96,7 +96,7 @@ svg {
     bottom: -10px;
     z-index: 2;
     min-width: 80px;
-    padding: 14px 25px 18px 25px;
+    padding: 15px 25px 15px 25px;
     background: #101d41;
     font-size: 20px;
     line-height: 20px;
@@ -224,8 +224,8 @@ svg {
   margin: 20px -25px 0 -25px;
   padding: 0 25px;
   overflow: hidden;
-  background-color: #ffffff;
-  transition: height 0.3s ease; }
+  will-change: height;
+  background-color: #ffffff; }
   @media (min-width: 768px) {
     .page-nav__wrapper {
       width: calc(100% + 80px);
@@ -795,7 +795,7 @@ svg {
   background-image: url("../img/globe-back-mobile.jpg");
   background-repeat: no-repeat;
   background-position: 0 -54px;
-  background-size: 100% 450px;
+  background-size: 100% 474px;
   border-top: 1px solid transparent; }
   @media (min-width: 768px) {
     .intro {
@@ -1354,12 +1354,11 @@ svg {
     position: absolute;
     content: "";
     left: 0;
-    top: 50%;
-    width: 11px;
-    height: 12px;
+    top: 62%;
+    width: 14px;
+    height: 14px;
     background-image: url("../img/icons/icon-user.svg");
     background-repeat: no-repeat;
-    background-size: 100%;
     transform: translateY(-50%); }
     @media (min-width: 768px) {
       .destinations__views::before {
@@ -1623,11 +1622,12 @@ svg {
   .user-card__name::before {
     position: absolute;
     content: "";
-    top: 12px;
+    top: 56%;
     left: -16px;
     width: 6px;
     height: 6px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    transform: translateY(-50%); }
     @media (min-width: 768px) {
       .user-card__name::before {
         width: 8px;
@@ -1698,7 +1698,7 @@ svg {
     width: 100%;
     height: 30px;
     left: 0;
-    bottom: 0;
+    bottom: 1px;
     background-color: #edeff6;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px; }
@@ -1847,6 +1847,7 @@ svg {
   line-height: 16px;
   color: #132576;
   border: none;
+  background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease; }
   .rates__link:hover {

@@ -10,6 +10,7 @@ toggle.addEventListener('click', function () {
   header.classList.toggle('header--open');
 });
 
+
 // ФИКСИРОВАННОЕ МЕНЮ
 
 let introSection = document.querySelector(".intro");

@@ -42,10 +42,11 @@
   margin: 20px -25px 0 -25px;
   padding: 0 25px;
   overflow: hidden;
+  will-change: height;
 
   background-color: $basic-white;
 
-  transition: height 0.3s ease;
+  // transition: height 0.3s ease;
 
   @media (min-width: 768px) {
     width: calc(100% + 80px);
