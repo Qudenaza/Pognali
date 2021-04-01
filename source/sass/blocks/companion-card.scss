@@ -1,0 +1,724 @@
+.companion-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  // grid-template-rows: auto auto auto 1fr;
+  grid-column-gap: 16px;
+  grid-template-areas:
+    "avatar details"
+    "countries countries"
+    "transport transport"
+    "button button";
+  width: 270px;
+  padding: 15px 0 23px 0;
+
+  border-radius: 20px;
+  background-color: $basic-white;
+
+  &:hover {
+    & .companion-card__image img {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1.5fr 2fr 1fr;
+    grid-template-rows: 1.5fr 0.5fr;
+    grid-column-gap: 30px;
+    grid-template-areas:
+      "avatar details transport"
+      "countries countries countries";
+    width: 688px;
+    min-height: 333px;
+    padding: 35px 0 17px 0;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: 285px 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-column-gap: 55px;
+    grid-template-areas:
+      "avatar details countries"
+      "avatar details transport";
+    width: 951px;
+    min-height: 286px;
+    padding: 0;
+  }
+}
+
+.companion-card__image {
+  grid-area: avatar;
+  width: 70px;
+  height: 70px;
+  margin-left: 18px;
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  & img {
+    transition: transform 1s ease;
+  }
+
+  @media (min-width: 768px) {
+    width: 190px;
+    height: 190px;
+    margin-left: 35px;
+
+    border-radius: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 285px;
+    height: 100%;
+    margin: 0;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.companion-card__group {
+  &--1 {
+    grid-area: details;
+    padding-right: 30px;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-right: 0;
+    }
+
+    @media (min-width: 1440px) {
+      padding-top: 43px;
+    }
+  }
+
+  &--2 {
+    position: relative;
+
+    grid-area: countries;
+    margin-top: 13px;
+    padding-left: 15px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 9px;
+
+      height: 1px;
+      width: 100%;
+
+      background-color: $page-background;
+
+      @media (min-width: 1440px) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      margin: 17px 0 0 0;
+      padding-left: 7px;
+
+      & .companion-card__caption {
+        margin-left: 65px;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      margin-top: 51px;
+      padding: 0;
+    }
+  }
+
+  &--3 {
+    display: flex;
+    justify-content: space-between;
+    grid-area: transport;
+
+    @media (min-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: -14px;
+      padding-left: 22px;
+    }
+
+    @media (min-width: 1440px) {
+      flex-direction: row;
+      align-items: flex-start;
+      margin: 0;
+      padding: 9px 45px 0 0px;
+    }
+
+    & .companion-card__caption {
+      margin-left: 16px;
+    }
+  }
+}
+
+.companion-card__wrapper {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 9px;
+
+    height: 1px;
+    width: 120%;
+
+    background-color: $page-background;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    padding-right: 12px;
+
+    @media (min-width: 768px) {
+      margin: 2px 0 0 3px;
+      padding: 0;
+    }
+
+    @media (min-width: 1440px) {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & .companion-card__caption {
+      display: none;
+    }
+  }
+}
+
+.companion-card__name {
+  position: relative;
+
+  display: block;
+  margin-top: -2px;
+
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  line-height: 20px;
+  color: $blue-button;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -8px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    transform: translateY(-50%);
+
+    @media (min-width: 768px) {
+      left: calc(100% + 23px);
+
+      width: 8px;
+      height: 8px;
+    }
+
+    @media (min-width: 1440px) {
+      left: -26px;
+    }
+  }
+
+  &[data-status="offline"]::before {
+    background-color: $status-offline-color;
+  }
+
+  &[data-status="online"]::before {
+    background-color: $status-online-color;
+  }
+
+  @media (min-width: 768px) {
+    display: inline-block;
+    vertical-align: top;
+    margin: -5px 0 0 3px;
+    padding-right: 0;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0;
+
+    & br {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0 0 0 6px;
+
+    transition: all 0.3s ease;
+  }
+}
+
+.companion-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12px 0 0 -79px;
+
+  @media (min-width: 768px) {
+    margin: 20px 0 0 6px;
+    order: 1;
+  }
+}
+
+.companion-card__tag {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: $special-grey;
+  letter-spacing: -0.6px;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.1px;
+  }
+}
+
+.companion-card__controls {
+  display: flex;
+  align-items: center;
+  margin: 2px 0 0 -37px;
+
+  @media (min-width: 768px) {
+    margin: 47px 0 0 0;
+    order: 2;
+  }
+}
+
+.companion-card__like {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+  background-color: $page-background;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    background-image: url("../img/icons/icon-heart.svg");
+    background-repeat: no-repeat;
+
+    transform: translate(-50%, -50%);
+
+    @media (min-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--active {
+    background-color: $special-red;
+
+    &::before {
+      background-image: url("../img/icons/icon-heart-fill.svg");
+    }
+
+    &:hover {
+      background-color: $special-red-hover;
+    }
+
+    &:hover::before {
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.companion-card__count {
+  margin-left: 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: $basic-blue;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.companion-card__caption {
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 11px;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16px;
+  color: $special-grey;
+  text-transform: lowercase;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: $basic-white;
+    backface-visibility: visible;
+  }
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+}
+
+.companion-card__countries {
+  margin: 17px 0 0 10px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 19px 0 0 28px;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0;
+    flex-direction: column;
+  }
+}
+
+.companion-card__country {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-left: 40px;
+
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $blue-button;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+
+    width: 26px;
+    height: 18px;
+
+    background-size: 100%;
+
+    @media (min-width: 768px) {
+      width: 35px;
+      height: 24px;
+    }
+  }
+
+  &[data-country="SL"]::before {
+    background-image: url("../img/flags/flag-shrilanka.png");
+  }
+
+  &[data-country="TA"]::before {
+    background-image: url("../img/flags/flag-thailand.png");
+  }
+
+  &[data-country="SE"]::before {
+    background-image: url("../img/flags/flag-seyshels.png");
+  }
+
+  &[data-country="BE"]::before {
+    background-image: url("../img/flags/flag-belgium.png");
+  }
+
+  &[data-country="CZ"]::before {
+    background-image: url("../img/flags/flag-czech.png");
+  }
+
+  &[data-country="GE"]::before {
+    background-image: url("../img/flags/flag-germany.png");
+  }
+
+  &[data-country="US"]::before {
+    background-image: url("../img/flags/flag-usa.png");
+  }
+
+  &[data-country="DO"]::before {
+    background-image: url("../img/flags/flag-dominica.png");
+  }
+
+  &[data-country="GB"]::before {
+    background-image: url("../img/flags/flag-britain.png");
+  }
+
+  &[data-country="AU"]::before {
+    background-image: url("../img/flags/flag-australia.png");
+  }
+
+  @media (min-width: 768px) {
+    margin-right: 27px;
+    padding-left: 47px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0 0 17px 0;
+    padding-left: 53px;
+  }
+}
+
+.companion-card__button {
+  display: block;
+  width: calc(100% - 40px);
+  height: 52px;
+  padding: 12px;
+
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: $blue-button;
+
+  border: none;
+  border-radius: 25px;
+  background-color: $basic-yellow;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $special-yellow-dark;
+  }
+
+  &:active {
+    color: rgba($blue-button, 0.3);
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &--tablet {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      min-width: 150px;
+    }
+  }
+
+  &--mobile {
+    grid-area: button;
+    align-self: flex-end;
+    height: 40px;
+    margin: 14px auto 0 auto;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.companion-card__types {
+  display: flex;
+  margin: 13px 0 0 21px;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    margin-left: 4px;
+  }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    margin: 16px 0 0 -6px;
+  }
+}
+
+.companion-card__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 1px;
+
+  background-color: $page-background;
+  border-radius: 50%;
+
+  & img {
+    opacity: 0.15;
+  }
+
+  &[data-active] img {
+    opacity: 1;
+  }
+
+  &--plane img {
+    width: 14px;
+    height: 16px;
+
+    @media (min-width: 768px) {
+      width: 23px;
+      height: 22px;
+    }
+  }
+
+  &--bus img {
+    width: 13px;
+    height: 16px;
+
+    @media (min-width: 768px) {
+      width: 19px;
+      height: 20px;
+    }
+  }
+
+  &--bicycle img {
+    width: 14px;
+    height: 17px;
+
+    @media (min-width: 768px) {
+      width: 26px;
+      height: 25px;
+    }
+  }
+
+  &--run img {
+    width: 13px;
+    height: 17px;
+
+    @media (min-width: 768px) {
+      width: 23px;
+      height: 24px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-top: -1px;
+
+    background-color: $transparent-color;
+  }
+}
+
+.companion-card__level {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  margin: 7px 0 0 22px;
+
+  font-size: 24px;
+  line-height: 24px;
+
+  background-image: url("../img/icons/icon-ellipse.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+
+  & span {
+    position: relative;
+    top: 2px;
+    left: -1px;
+
+    display: none;
+
+    font-size: 14px;
+    line-height: 14px;
+    color: rbga($basic-black, 0.4);
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -2px;
+      left: -2px;
+
+      width: 30px;
+      height: 1px;
+
+      background-color: rgba($basic-black, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 62px;
+    height: 62px;
+    margin: 0;
+  }
+}

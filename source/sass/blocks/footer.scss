@@ -28,6 +28,18 @@
     margin-top: -66px;
     padding: 40px 60px 0 60px;
   }
+
+  &--catalog {
+    margin-top: 47px;
+
+    @media (min-width: 768px) {
+      margin-top: 61px;
+    }
+
+    @media (min-width: 1440px) {
+      margin-top: 76px;
+    }
+  }
 }
 
 .page-footer__logo {
