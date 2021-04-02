@@ -14,6 +14,10 @@
     background-color: $basic-blue;
   }
 
+  &--catalog {
+    background-color: $special-blue;
+  }
+
   &--fix {
     position: fixed;
     top: 0;

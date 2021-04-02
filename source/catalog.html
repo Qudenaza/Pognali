@@ -8,7 +8,7 @@
   <title>«Pognali» - Сервис для путешествий</title>
 </head>
 <body class="page__body">
-  <!-- <header class="page__header header">
+  <header class="page__header header header--catalog">
     <nav class="page-nav page-nav--closed">
       <a href="./" class="page-logo">
         <picture class="page-logo__img">
@@ -102,9 +102,25 @@
         </ul>
       </div>
     </nav>
-  </header> -->
-  <main class="page__main">
-    <div class="container page__main--container">
+  </header>
+  <main class="page__main page-main">
+    <header class="page-main__header">
+      <h1 class="page-main__title">Попутчики</h1>
+      <a href="./" class="page-main__link">На главную</a>
+    </header>
+    <section class="filtering">
+      <h2 class="filtering__title">Фильтрация по странам:</h2>
+      <ul class="filtering__countries">
+        <li class="filtering__item filtering__item--active"><button class="filtering__text">Европа</button></li>
+        <li class="filtering__item"><button class="filtering__text">Азия</button></li>
+        <li class="filtering__item"><button class="filtering__text">Америка</button></li>
+        <li class="filtering__item"><button class="filtering__text">Острова</button></li>
+      </ul>
+      <button class="filtering__toggle" aria-label="Открыть модальное окно выбора страны">
+        <span class="filtering__span">Показать все</span>
+      </button>
+    </section>
+    <div class="container page-main__container">
       <section class="select">
         <h2 class="select__title">Подберите идеального попутчика</h2>
         <div class="select__wrapper">
