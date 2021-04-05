@@ -90,3 +90,39 @@ likeButtons.forEach(button => {
     this.classList.toggle('companion-card__like--active');
   })
 });
+
+
+// ПОПАП ФИЛЬТРАЦИИ ПО СТРАНАМ
+
+const filtering = document.querySelector('.filtering');
+
+filtering.addEventListener('click', function(e) {
+  if (e.target.classList.contains('filtering__close') || e.target.classList.contains('filtering__toggle')) {
+    this.classList.toggle('filtering--expanded');
+  }
+});
+
+
+// ВЫБОР ГОРОДОВ ПО КНОПКАМ
+
+const lettersWrapper = document.querySelector('.filtering__wrapper'),
+      citiesContainer = document.querySelector('.filtering__content'),
+      filteringPremission = (window.innerWidth < 1439);
+
+if (filteringPremission) {
+  lettersWrapper.addEventListener('click', function(e) {
+    const letters = document.querySelectorAll('.filtering__letter');
+
+    if (e.target.tagName = "BUTTON") {
+      const citiesList = e.target.nextElementSibling.cloneNode(true);
+
+      letters.forEach(letter => {
+        letter.classList.remove('filtering__letter--active');
+      });
+
+      e.target.classList.add('filtering__letter--active');
+
+      citiesContainer.firstElementChild.replaceWith(citiesList);
+    };
+  });
+}
