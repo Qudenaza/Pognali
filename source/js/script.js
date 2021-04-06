@@ -94,13 +94,13 @@ likeButtons.forEach(button => {
 
 // ПОПАП ФИЛЬТРАЦИИ ПО СТРАНАМ
 
-const filtering = document.querySelector('.filtering');
+// const filtering = document.querySelector('.filtering');
 
-filtering.addEventListener('click', function(e) {
-  if (e.target.classList.contains('filtering__close') || e.target.classList.contains('filtering__toggle')) {
-    this.classList.toggle('filtering--expanded');
-  }
-});
+// filtering.addEventListener('click', function(e) {
+//   if (e.target.classList.contains('filtering__close') || e.target.classList.contains('filtering__toggle')) {
+//     this.classList.toggle('filtering--expanded');
+//   }
+// });
 
 
 // ВЫБОР ГОРОДОВ ПО КНОПКАМ
