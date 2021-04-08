@@ -103,26 +103,97 @@ likeButtons.forEach(button => {
 // });
 
 
+// КОЛИЧЕСТВО ПОПУТЧИКОВ
+
+const companionsInput = document.querySelector('#stepCompanions'),
+      companionsInputMore = document.querySelector('#stepCompanionsMore'),
+      companionsInputLess = document.querySelector('#stepCompanionsLess');
+
+companionsInputMore.addEventListener('click', function() {
+  companionsInput.value++;
+
+  if (+companionsInput.value > +companionsInput.max) {
+    companionsInput.value = companionsInput.max;
+  };
+});
+
+companionsInputLess.addEventListener('click', function() {
+  companionsInput.value--;
+
+  if (+companionsInput.value < +companionsInput.min) {
+    companionsInput.value = companionsInput.min;
+  }
+});
+
+// КОЛИЧЕСТВО ДНЕЙ
+
+const daysInput = document.querySelector('#stepDays'),
+      daysInputMore = document.querySelector('#stepDaysMore'),
+      daysInputLess = document.querySelector('#stepDaysLess');
+
+daysInputMore.addEventListener('click', function() {
+  daysInput.value++;
+
+  if (+daysInput.value > +daysInput.max) {
+    daysInput.value = daysInput.max;
+  };
+});
+
+daysInputLess.addEventListener('click', function() {
+  daysInput.value--;
+
+  if (+daysInput.value < +daysInput.min) {
+    daysInput.value = daysInput.min;
+  }
+});
+
+
 // ВЫБОР ГОРОДОВ ПО КНОПКАМ
 
-const lettersWrapper = document.querySelector('.filtering__wrapper'),
-      citiesContainer = document.querySelector('.filtering__content'),
-      filteringPremission = (window.innerWidth < 1439);
+// const lettersWrapper = document.querySelector('.filtering__wrapper'),
+//       citiesContainer = document.querySelector('.filtering__content'),
+//       filteringPremission = (window.innerWidth < 1439);
 
-if (filteringPremission) {
-  lettersWrapper.addEventListener('click', function(e) {
-    const letters = document.querySelectorAll('.filtering__letter');
+// if (filteringPremission) {
+//   lettersWrapper.addEventListener('click', function(e) {
+//     const letters = document.querySelectorAll('.filtering__letter');
 
-    if (e.target.tagName = "BUTTON") {
-      const citiesList = e.target.nextElementSibling.cloneNode(true);
+//     if (e.target.tagName = "BUTTON") {
+//       const citiesList = e.target.nextElementSibling.cloneNode(true);
 
-      letters.forEach(letter => {
-        letter.classList.remove('filtering__letter--active');
-      });
+//       letters.forEach(letter => {
+//         letter.classList.remove('filtering__letter--active');
+//       });
 
-      e.target.classList.add('filtering__letter--active');
+//       e.target.classList.add('filtering__letter--active');
 
-      citiesContainer.firstElementChild.replaceWith(citiesList);
-    };
-  });
-}
+//       citiesContainer.firstElementChild.replaceWith(citiesList);
+//     };
+//   });
+// }
+
+// ШАГИ
+
+const steps = document.querySelectorAll('.step');
+      nextStepBtns = document.querySelectorAll('.js-next-step');
+      prevStepBtns = document.querySelectorAll('.js-prev-step')
+
+nextStepBtns.forEach(button => {
+  button.addEventListener('click', (e) => makeActiveStep(e, true));
+});
+
+prevStepBtns.forEach(button => {
+  button.addEventListener('click', (e) => makeActiveStep(e, false));
+});
+
+function makeActiveStep(el, next) {
+  let currentActiveModal = +el.target.parentElement.parentElement.dataset.slide;
+
+  steps.forEach(step => step.classList.remove('step--active'));
+
+  if (next) {
+    steps[++currentActiveModal].classList.add('step--active');
+  } else {
+    steps[--currentActiveModal].classList.add('step--active');
+  };
+};

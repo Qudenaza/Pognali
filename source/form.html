@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head class="page">
+<html lang="ru" class="page">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -170,6 +170,130 @@
             </label>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="plans">
+      <h2 class="plans__title">Мои планы:</h2>
+      <div class="plans__container container">
+        <div class="plans__list">
+          <div class="plans__plan">
+            <header class="plans__header">
+              <span class="plans__number">1.</span>
+              <ul class="plans__countries">
+                <li class="plans__country">Франция,</li>
+                <li class="plans__country">Италия</li>
+              </ul>
+            </header>
+            <div class="plans__content">
+              <p class="plans__companions">
+                <b class="js-companions-count">3</b>
+                попутчика
+              </p>
+              <p class="plans__date">
+                <b class="js-plans-date-start">26 мар</b>
+                <span class="plans__dash"></span>
+                <b class="js-plans-date-end">29 мар</b>
+              </p>
+              <button class="plans__button">Изменить</button>
+            </div>
+          </div>
+          <div class="plans__plan">
+            <header class="plans__header">
+              <span class="plans__number">2.</span>
+              <ul class="plans__countries">
+                <li class="plans__country">Таиланд,</li>
+                <li class="plans__country">Индонезия</li>
+              </ul>
+            </header>
+            <div class="plans__content">
+              <p class="plans__companions">
+                <b class="js-companions-count">1</b>
+                попутчик
+              </p>
+              <p class="plans__date">
+                <b class="js-plans-date-start">1 июл</b>
+                <span class="plans__dash"></span>
+                <b class="js-plans-date-end">15 июл</b>
+              </p>
+              <button class="plans__button">Изменить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="form">
+      <h2 class="form__title">Добавить план:</h2>
+      <div class="form__container container">
+        <form action="#" class="form__form">
+          <div class="step step--active" data-slide="0">
+            <h3 class="step__title">Шаг 1.<br> Даты пребывания</h3>
+            <p class="step__text">Укажите предпочтительное количество попутчиков, которых
+              вы хотели бы позвать в поездку, и ее предполагаемую длительность.</p>
+            <div class="step__group">
+              <label for="stepCompanions" class="step__subtitle">Ищу попутчиков:
+                <span>Чел.</span>
+              </label>
+              <div class="step__inner">
+                <input class="step__input-number" type="number" id="stepCompanions" value="0" min="0" max="20">
+                <button class="step__btn step__btn--less" type="button" aria-label="Меньше" id="stepCompanionsLess">
+                  <svg viewBox="0 0 18 18" fill="#CCCCCC" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="8.30762" width="18" height="1.38461" rx="0.692307"/>
+                  </svg>
+                </button>
+                <button class="step__btn step__btn--more" type="button" aria-label="Больше" id="stepCompanionsMore">
+                  <svg viewBox="0 0 18 18" fill="#CCCCCC" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="8.30762" width="18" height="1.38461" rx="0.692307"/>
+                    <rect x="8.30774" y="18" width="18" height="1.38461" rx="0.692307" transform="rotate(-90 8.30774 18)"/>
+                  </svg>
+                </button>
+              </div>
+              <label class="step__checkbox" for="stepKids">
+                <input class="step__input-checkbox" type="checkbox" name="stepKids" id="stepKids">
+                <span class="step__control"></span>
+                <span class="step__span">Можно с детьми</span>
+              </label>
+            </div>
+            <div class="step__group step__group--relative">
+              <label for="stepDays" class="step__subtitle">Длительность:
+                <span>Дн.</span>
+              </label>
+              <div class="step__inner">
+                <input class="step__input-number" type="number" id="stepDays" value="0" min="0" max="100">
+                <button class="step__btn step__btn--less" type="button" aria-label="Меньше" id="stepDaysLess">
+                  <svg viewBox="0 0 18 18" fill="#CCCCCC" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="8.30762" width="18" height="1.38461" rx="0.692307"/>
+                  </svg>
+                </button>
+                <button class="step__btn step__btn--more" type="button" aria-label="Больше" id="stepDaysMore">
+                  <svg viewBox="0 0 18 18" fill="#CCCCCC" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="8.30762" width="18" height="1.38461" rx="0.692307"/>
+                    <rect x="8.30774" y="18" width="18" height="1.38461" rx="0.692307" transform="rotate(-90 8.30774 18)"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="step__controls">
+              <button class="step__button button js-next-step" type="button">Следующий шаг</button>
+            </div>
+          </div>
+          <div class="step" data-slide="1">
+            <h3 class="step__title">Шаг 2.<br> Маршрут</h3>
+            <p class="step__text">Укажите страны, которые вы хотели бы посетить. Это может быть одна или сразу несколько.</p>
+            <div class="step__controls">
+              <button class="step__button button js-next-step" type="button">Следующий шаг</button>
+              <button class="step__button step__button--simple js-prev-step" type="button">На шаг назад</button>
+            </div>
+          </div>
+          <div class="step" data-slide="2">
+            <h3 class="step__title">Шаг 3.<br> Развлечения</h3>
+            <p class="step__text">Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить тэги.
+            </p>
+            <div class="step__controls">
+              <button class="step__button button" type="submit">Отправить</button>
+              <button class="step__button step__button--simple js-prev-step" type="button">На шаг назад</button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
