@@ -197,3 +197,4 @@ function makeActiveStep(el, next) {
     steps[--currentActiveModal].classList.add('step--active');
   };
 };
+

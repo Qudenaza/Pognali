@@ -272,6 +272,100 @@
                 </button>
               </div>
             </div>
+            <div class="step__group step__group--calendar">
+              <header class="step__heading">
+                <button class="step__arrow step__arrow--prev" type="button" aria-label="Предыдущий месяц">
+                  <svg viewBox="0 0 9 19" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.8116 0.400608C8.71296 0.288944 8.59577 0.200351 8.46676 0.139903C8.33775 0.0794548 8.19945 0.0483398 8.05977 0.0483398C7.92009 0.0483398 7.78179 0.0794548 7.65278 0.139903C7.52377 0.200351 7.40659 0.288944 7.30795 0.400608L0.248437 8.37194C0.169684 8.46069 0.107204 8.5661 0.0645734 8.68214C0.0219433 8.79818 0 8.92258 0 9.04821C0 9.17384 0.0219433 9.29824 0.0645734 9.41428C0.107204 9.53033 0.169684 9.63574 0.248437 9.72448L7.30795 17.6958C7.72421 18.1658 8.39533 18.1658 8.8116 17.6958C9.22786 17.2258 8.88303 16.7322 8.46676 16.2622L4.74854 12.0836L2.12914 9.01725L8.8207 1.30298C8.8207 1.30298 9.22786 0.861046 8.8116 0.400608Z"/>
+                  </svg>
+                </button>
+                <input class="step__input-date" type="month" value="2021-03">
+                <button class="step__arrow step__arrow--next" type="button" aria-label="Следующий месяц">
+                  <svg  viewBox="0 0 10 19" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.06949 18.3693C1.16815 18.481 1.28536 18.5695 1.41439 18.63C1.54343 18.6904 1.68176 18.7216 1.82146 18.7216C1.96117 18.7216 2.0995 18.6904 2.22853 18.63C2.35757 18.5695 2.47477 18.481 2.57344 18.3693L9.63433 10.398C9.7131 10.3092 9.77559 10.2038 9.81823 10.0878C9.86086 9.97171 9.88281 9.84732 9.88281 9.72169C9.88281 9.59605 9.86086 9.47166 9.81823 9.35561C9.77559 9.23957 9.7131 9.13416 9.63433 9.04542L2.57344 1.07408C2.15709 0.60405 1.48584 0.60405 1.06949 1.07408C0.653145 1.54411 1.32374 2.3591 1.74009 2.82913L7.82453 9.72169L1.41439 16.972C1.00654 17.4324 0.653145 17.9089 1.06949 18.3693Z"/>
+                  </svg>
+                </button>
+              </header>
+              <table class="step__table">
+                <tr class="step__row">
+                  <th>
+                    <span>Пн</span>
+                  </th>
+                  <th>
+                    <span>Вт</span>
+                  </th>
+                  <th>
+                    <span>Ср</span>
+                  </th>
+                  <th>
+                    <span>Чт</span>
+                  </th>
+                  <th>
+                    <span>Пт</span>
+                  </th>
+                  <th>
+                    <span>Сб</span>
+                  </th>
+                  <th>
+                    <span>Вс</span>
+                  </th>
+                </tr>
+                <tr class="step__row">
+                  <td>23</td>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                </tr>
+                <tr class="step__row">
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                </tr>
+                <tr class="step__row">
+                  <td>9</td>
+                  <td>10</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                </tr>
+                <tr class="step__row">
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                </tr>
+                <tr class="step__row">
+                  <td>23</td>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                </tr>
+                <tr class="step__row">
+                  <td>30</td>
+                  <td>31</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                </tr>
+              </table>
+            </div>
             <div class="step__controls">
               <button class="step__button button js-next-step" type="button">Следующий шаг</button>
             </div>
@@ -279,6 +373,11 @@
           <div class="step" data-slide="1">
             <h3 class="step__title">Шаг 2.<br> Маршрут</h3>
             <p class="step__text">Укажите страны, которые вы хотели бы посетить. Это может быть одна или сразу несколько.</p>
+            <div class="step__choices">
+              <div class="step__choice">
+                <button class="step__choice-button js-add-city" type="button">Добавить страну</button>
+              </div>
+            </div>
             <div class="step__controls">
               <button class="step__button button js-next-step" type="button">Следующий шаг</button>
               <button class="step__button step__button--simple js-prev-step" type="button">На шаг назад</button>
@@ -337,6 +436,95 @@
         </svg>
     </a>
   </footer> -->
+  <template id="stepCountries">
+    <div class="step__countries">
+      <header class="step__header">
+        <h2 class="step__caption">Выберите страну</h2>
+        <button class="step__cross" type="button"></button>
+      </header>
+      <div class="step__wrapper">
+        <table class="step__letters">
+          <tr class="step__letters-row">
+            <td class="step__letters-cell"><button class="step__letter step__letter--active" type="button">А</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Б</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">В</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Г</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Д</button></td>
+          </tr>
+          <tr class="step__letters-row">
+            <td class="step__letters-cell"><button class="step__letter" type="button">Е</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">З</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">И</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">К</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Л</button></td>
+          </tr>
+          <tr class="step__letters-row">
+            <td class="step__letters-cell"><button class="step__letter" type="button">М</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Н</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">О</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">П</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Р</button></td>
+          </tr>
+          <tr class="step__letters-row">
+            <td class="step__letters-cell"><button class="step__letter" type="button">С</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Т</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">У</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Ф</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Х</button></td>
+          </tr>
+          <tr class="step__letters-row">
+            <td class="step__letters-cell"><button class="step__letter" type="button">Ч</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Ш</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Э</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Ю</button></td>
+            <td class="step__letters-cell"><button class="step__letter" type="button">Я</button></td>
+          </tr>
+        </table>
+      </div>
+      <div class="step__content">
+        <ul class="step__list">
+          <li class="step__box">
+            <button class="step__country" type="button">Австралия</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Австрия</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Азербайджан</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Албания</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Алжир</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Ангола</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Андора</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Антигуа и Барбуда</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Аргентина</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Армения</button>
+          </li>
+          <li class="step__box">
+            <button class="step__country" type="button">Афганистан</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </template>
   <script src="js/script.js"></script>
+  <script src="js/date.js"></script>
+  <script src="js/city.js"></script>
+  <script src="js/countries.js"></script>
 </body>
 </html>
+
+
