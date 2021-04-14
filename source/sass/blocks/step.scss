@@ -112,6 +112,64 @@
       padding-top: 0;
     }
   }
+
+  &--country {
+    position: relative;
+
+    margin: 0;
+
+    &:not(:last-child) {
+      padding-bottom: 25px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 12px;
+        left: -12px;
+
+        width: 2px;
+        height: 100%;
+
+        background-color: $blue-button;
+
+        @media (min-width: 768px) {
+          left: inherit;
+          right: -34px;
+          top: 44px;
+        }
+
+        @media (min-width: 1440px) {
+          right: 150px;
+          top: 50px;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      border: none;
+    }
+
+    @media (min-width: 1440px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+.step__fieldset {
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+    margin-top: 34px;
+    padding: 20px 33px 50px 0;
+
+    border-top: 1px solid $another-border-color;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 55px;
+    padding-top: 40px;
+  }
 }
 
 .step__subtitle {
@@ -204,6 +262,10 @@
     & ~ .step__btn svg {
       fill: $basic-blue;
     }
+  }
+
+  &:disabled {
+    background-color: $basic-white;
   }
 
   @media (min-width: 768px) {
@@ -321,6 +383,7 @@
   border: 1px solid $another-border-color;
 
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &::before {
     position: absolute;
@@ -338,6 +401,19 @@
     @media (min-width: 768px) {
       width: 11px;
       height: 11px;
+    }
+  }
+
+  &:hover {
+    border-color: $input-hover;
+  }
+
+  &:active {
+    background-color: $special-blue-ellipse;
+    border-color: $special-blue-ellipse;
+
+    &::before {
+      opacity: 0.3;
     }
   }
 
@@ -371,12 +447,12 @@
 
   @media (min-width: 768px) {
     display: flex;
+    justify-content: space-between;
     margin-top: 0;
   }
 
   @media (min-width: 1440px) {
     margin-top: 56px;
-    justify-content: space-between;
   }
 }
 
@@ -421,6 +497,17 @@
     position: relative;
 
     background-color: $transparent-color;
+
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.3;
+      outline: none;
+    }
 
     @media (min-width: 768px) {
       padding-right: 40px;
@@ -505,6 +592,23 @@
   opacity: 0.3;
 
   transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+
+  & svg {
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover svg {
+    opacity: 0.5;
+  }
+
+  &:active svg {
+    opacity: 0.1;
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   &--prev {
     @media (min-width: 768px) {
@@ -656,7 +760,7 @@
       position: absolute;
       content: "";
       right: 48px;
-      bottom: 6px;
+      bottom: -15px;
 
       width: 9px;
       height: 10px;
@@ -700,6 +804,11 @@
   border: 1px solid $transparent-color;
 
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $input-hover;
+  }
 
   &[data-selected="true"] {
     & ~ .step__flag {
@@ -779,6 +888,33 @@
         width: 20px;
         height: 20px;
       }
+    }
+  }
+
+  &--add {
+    margin: 0;
+
+    background-color: $page-background;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $page-background;
+      border-color: $page-background;
+    }
+
+    &:active {
+      background-color: $profile-button;
+    }
+
+    @media (min-width: 768px) {
+      &::before {
+        background-color: $page-background;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      background-color: $transparent-color;
     }
   }
 
@@ -923,6 +1059,19 @@
   border: none;
   background-color: $transparent-color;
 
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $blue-button;
+  }
+
+  &:active {
+    color: $blue-button;
+    opacity: 0.3;
+    outline: none;
+  }
+
   @media (min-width: 768px) {
     font-size: 20px;
     line-height: 20px;
@@ -961,6 +1110,12 @@
 
   border: 1px solid $another-border-color;
 
+  transition: border 0.3s ease;
+
+  &:hover {
+    border-color: $input-hover;
+  }
+
   @media (min-width: 768px) {
     width: 55px;
     height: 70px;
@@ -984,6 +1139,10 @@
 
   background-color: $basic-white;
   border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &--active {
     background-color: $page-background;
@@ -1088,6 +1247,20 @@
   background-image: url("../img/icons/icon-cross.svg");
   background-repeat: no-repeat;
 
+  cursor: pointer;
+  opacity: 0.3;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.1;
+    outline: none;
+  }
+
   @media (min-width: 768px) {
     width: 21px;
     height: 21px;
@@ -1110,6 +1283,19 @@
   background-size: 9px 9px;
   background-position: center;
 
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.1;
+    outline: none;
+  }
+
   @media (min-width: 768px) {
     top: 50%;
     right: 0;
@@ -1124,12 +1310,196 @@
   }
 }
 
-.js-add-city {
-  margin: 0;
+.step__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .step__flag {
+    display: block;
+    width: 35px;
+    height: 24px;
+
+    background-size: contain;
+    border: none;
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: inherit;
+      right: 33px;
+      top: 50%;
+      z-index: 1;
+
+      width: 45px;
+      height: 100%;
+
+      background-image: url("../img/fade-mobile.png");
+      background-repeat: no-repeat;
+
+      transform: translateY(-50%);
+
+      @media (min-width: 768px) {
+        right: -40px;
+
+        width: 14px;
+        height: 14px;
+
+        border-radius: 50%;
+        background-image: none;
+        background-color: $blue-button;
+      }
+
+      @media (min-width: 1440px) {
+        right: 144px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      width: 70px;
+      height: 47px;
+    }
+
+    &[data-country="Чехия"] {
+      background-image: url("../img/flags/flag-czech.png");
+    }
+
+    &[data-country="Австралия"] {
+      background-image: url("../img/flags/flag-australia.png");
+    }
+
+    &[data-country="Бельгия"] {
+      background-image: url("../img/flags/flag-belgium.png");
+    }
+
+    &[data-country="Доминика"] {
+      background-image: url("../img/flags/flag-dominica.png");
+    }
+
+    &[data-country="Германия"] {
+      background-image: url("../img/flags/flag-germany.png");
+    }
+
+    &[data-country="Сейшелы"] {
+      background-image: url("../img/flags/flag-seyshels.png");
+    }
+
+    &[data-country="Шри-Ланка"] {
+      background-image: url("../img/flags/flag-shrilanka.png");
+    }
+
+    &[data-country="Таиланд"] {
+      background-image: url("../img/flags/flag-thailand.png");
+    }
+
+    &[data-country="США"] {
+      background-image: url("../img/flags/flag-usa.png");
+    }
+
+    &[data-country="Великобритания"] {
+      background-image: url("../img/flags/flag-britain.png");
+    }
+  }
+}
+
+.step__legend {
+  position: relative;
+
+  padding-left: 12px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $blue-button;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background-color: $blue-button;
+
+    transform: translateY(-50%);
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: -12px;
+
+    width: 12px;
+    height: 2px;
+
+    background-color: $blue-button;
+
+    transform: translateY(-50%);
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 
   @media (min-width: 768px) {
-    &::before {
-      background-color: $page-background;
-    }
+    padding-left: 0;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+}
+
+.step__textarea {
+  width: 100%;
+  height: 220px;
+  margin-top: 18px;
+  padding: 10px 14px;
+
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 22px;
+  color: $special-grey;
+
+  border: 1px solid $another-border-color;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $input-hover;
+  }
+
+  &:active {
+    border-color: $basic-blue;
+  }
+
+  &::placeholder {
+    opacity: 0.3;
+  }
+
+  @media (min-width: 768px) {
+    padding: 20px;
+    height: 140px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 730px;
   }
 }

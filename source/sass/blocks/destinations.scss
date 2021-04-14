@@ -188,27 +188,15 @@
   }
 
   &--thailand::before {
-    background-image: url("../img/flag-thailand-mobile.jpg");
-
-    @media (min-width: 768px) {
-      background-image: url("../img/flag-thailand-tablet.jpg");
-    }
+    background-image: url("../img/flags/flag-thailand.png");
   }
 
   &--france::before {
-    background-image: url("../img/flag-france-mobile.jpg");
-
-    @media (min-width: 768px) {
-      background-image: url("../img/flag-france-tablet.jpg");
-    }
+    background-image: url("../img/flags/flag-france.png");
   }
 
   &--czech::before {
-    background-image: url("../img/flag-czech-mobile.jpg");
-
-    @media (min-width: 768px) {
-      background-image: url("../img/flag-czech-tablet.jpg");
-    }
+    background-image: url("../img/flags/flag-czech.png");
   }
 }
 
