@@ -136,6 +136,12 @@ const dateInput = document.querySelector('.step__input-date'),
 const addCountryButton = document.querySelector('#addCountry'),
       countryChoiceContainer = document.querySelector('#stepChoices');
 
+// Кнопки переключения между шагами
+const steps = document.querySelectorAll('.step');
+      nextStepBtns = document.querySelectorAll('.js-next-step'),
+      prevStepBtns = document.querySelectorAll('.js-prev-step'),
+      circleIndicators = document.querySelectorAll('.form__item');
+
 
 // Функции:
 
@@ -173,13 +179,14 @@ function addCountryChoiceField() {
         countriesPopupCloseButton = template.querySelector('.step__cross'),
         deleteCountryFieldButton = template.querySelector('.step__close'),
         lettersTable = template.querySelector('.step__letters'),
-        countriesList = template.querySelector('.step__content');
+        countriesList = template.querySelector('.step__content'),
+        uniqueId = Math.floor(Math.random() * 1000);
 
   countriesPopupOpenButton.addEventListener('click', openCountriesPopup);
   countriesPopupCloseButton.addEventListener('click', closeCountriesPopup);
   deleteCountryFieldButton.addEventListener('click', deleteCountryField);
-  lettersTable.addEventListener('click', (e) => changeCountries(e, countriesList));
-
+  countriesList.addEventListener('click', (e) => choseCountry(e, uniqueId));
+  lettersTable.addEventListener('click', changeCountries);
 
   countryChoiceContainer.prepend(template);
 };
@@ -204,7 +211,7 @@ function deleteCountryField() {
 };
 
 // Функция показывает страны по первой букве
-function changeCountries(e, countriesList) {
+function changeCountries(e) {
   if (e.target.classList != 'step__letter') return;
 
   const letter = e.target.textContent,
@@ -214,13 +221,14 @@ function changeCountries(e, countriesList) {
 
   e.target.classList.add('step__letter--active');
 
-  createCountriesList(letter, countriesList);
+  createCountriesList(letter, e);
 };
 
 // Функция создает список стран
-function createCountriesList(letter, countriesList) {
+function createCountriesList(letter, e) {
   const arr = countries.find(item => item.letter == letter).countriesArray,
-        ul = document.createElement('ul');
+        ul = document.createElement('ul'),
+        countriesWrapper = e.target.closest('.step__countries').querySelector('.step__content');
 
   ul.className = 'step__list';
 
@@ -238,41 +246,35 @@ function createCountriesList(letter, countriesList) {
     ul.append(li);
   });
 
-  ul.addEventListener('click', (e) => choseCountry(e, countriesList));
-
-  countriesList.firstElementChild.replaceWith(ul);
+  countriesWrapper.firstElementChild.replaceWith(ul);
 };
 
 // Функция для выбора желаемой страны
-function choseCountry(e, countriesList) {
+function choseCountry(e, id) {
   if (e.target.className != 'step__country') return;
 
   const country = e.target.textContent,
-        countryField = countriesList.parentElement.parentElement.querySelector('.step__choice-button');
+        countryField = e.target.closest('.step__choice').querySelector('.step__choice-button');
 
   countryField.textContent = country;
   countryField.dataset.selected = true;
   countryField.setAttribute('data-country', country);
 
-  stepsData.countriesToVisit.push({
-    countryName: country,
-    countryPlans: ''
-  })
+  addCountryToArray(id, country);
 
   closeCountriesPopup(e);
-  addCountryPlans(stepsData.countriesToVisit.length - 1);
 };
 
 // Функция добавляет поле для описание действий в выбранной стране
-function addCountryPlans(country) {
+function addCountryPlans(data) {
   const template = document.querySelector('#stepTextareas').content.firstElementChild.cloneNode(true),
         plansWrapper = document.querySelector('.step__fieldset'),
         plansTitle = template.querySelector('.step__legend'),
         plansFlag = template.querySelector('span'),
         plansTextarea = template.querySelector('textarea');
 
-  plansTitle.textContent = stepsData.countriesToVisit[country].countryName;
-  plansFlag.dataset.country =stepsData.countriesToVisit[country].countryName;
+  plansTitle.textContent = data.countryName;
+  plansFlag.dataset.country = data.countryName;
 
   plansWrapper.appendChild(template);
 
@@ -281,6 +283,57 @@ function addCountryPlans(country) {
 
     target.countryPlans = e.target.value;
   })
+};
+
+// Функция переключение между шагами
+function makeActiveStep(el, next) {
+  let currentActiveModal = +el.target.parentElement.parentElement.dataset.slide;
+
+  steps.forEach(step => step.classList.remove('step--active'));
+  circleIndicators.forEach(circle => circle.classList.remove('form__item--active'));
+
+  if (el.target.id == 'textareaTrigger') {
+    for(let i = 0; i < stepsData.countriesToVisit.length; i++) {
+      addCountryPlans(stepsData.countriesToVisit[i]);
+    };
+  } else if (el.target.id == 'removeTextareaFields') {
+    document.querySelector('.step__fieldset').innerHTML = '';
+  }
+
+  if (next) {
+    steps[++currentActiveModal].classList.add('step--active');
+    circleIndicators[currentActiveModal].classList.add('form__item--active');
+  } else {
+    steps[--currentActiveModal].classList.add('step--active');
+    circleIndicators[currentActiveModal].classList.add('form__item--active');
+  };
+};
+
+// Функция проверяет уникальность страны
+function checkForUniqueId(id) {
+  return stepsData.countriesToVisit.findIndex(country => country.uniqueId == id);
+};
+
+
+// Функция добавляет данные в объект
+function addCountryToArray(id, country) {
+  const index = checkForUniqueId(id);
+
+  if (index != -1) {
+    const data = {
+      uniqueId: id,
+      countryName: country,
+      countryPlans: ''
+    };
+
+    stepsData.countriesToVisit.splice(index, 1, data);
+  } else {
+    stepsData.countriesToVisit.push({
+      uniqueId: id,
+      countryName: country,
+      countryPlans: ''
+    })
+  }
 };
 
 
@@ -310,31 +363,12 @@ prevMonthBtn.addEventListener('click', () => dateInput.stepDown());
 // Это событие срабатывает при клике на кнопку следующего месяца
 nextMonthBtn.addEventListener('click', () => dateInput.stepUp());
 
-
-
-
-// ШАГИ
-
-const steps = document.querySelectorAll('.step');
-      nextStepBtns = document.querySelectorAll('.js-next-step');
-      prevStepBtns = document.querySelectorAll('.js-prev-step')
-
+// Это событие срабатывает при клике на следующий шаг
 nextStepBtns.forEach(button => {
   button.addEventListener('click', (e) => makeActiveStep(e, true));
 });
 
+// Это событие срабатывает при клике на предыдущий шаг
 prevStepBtns.forEach(button => {
   button.addEventListener('click', (e) => makeActiveStep(e, false));
 });
-
-function makeActiveStep(el, next) {
-  let currentActiveModal = +el.target.parentElement.parentElement.dataset.slide;
-
-  steps.forEach(step => step.classList.remove('step--active'));
-
-  if (next) {
-    steps[++currentActiveModal].classList.add('step--active');
-  } else {
-    steps[--currentActiveModal].classList.add('step--active');
-  };
-};

@@ -168,6 +168,7 @@
     width: 35px;
     height: 24px;
 
+    background-size: 100%;
     background-repeat: no-repeat;
 
     @media (min-width: 768px) {
@@ -302,6 +303,7 @@
 
     background-image: url("../img/icons/icon-user.svg");
     background-repeat: no-repeat;
+    background-position: center;
 
     transform: translateY(-50%);
 

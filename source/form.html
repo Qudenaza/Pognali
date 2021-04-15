@@ -190,8 +190,8 @@
       </div>
     </section>
     <section class="plans">
-      <h2 class="plans__title">Мои планы:</h2>
       <div class="plans__container container">
+        <h2 class="plans__title">Мои планы:</h2>
         <div class="plans__list">
           <div class="plans__plan">
             <header class="plans__header">
@@ -239,8 +239,13 @@
       </div>
     </section>
     <section class="form">
-      <h2 class="form__title">Добавить план:</h2>
       <div class="form__container container">
+        <h2 class="form__title">Добавить план:</h2>
+        <ul class="form__indicators">
+          <li class="form__item form__item--active" data-slide="0">Даты</li>
+          <li class="form__item" data-slide="1">Маршрут</li>
+          <li class="form__item" data-slide="2">Развлечения</li>
+        </ul>
         <form action="#" class="form__form">
           <div class="step step--active" data-slide="0">
             <h3 class="step__title">Шаг 1.<br> Даты пребывания</h3>
@@ -396,7 +401,7 @@
               </div>
             </div>
             <div class="step__controls">
-              <button class="step__button button js-next-step" type="button">Следующий шаг</button>
+              <button class="step__button button js-next-step" type="button" id="textareaTrigger">Следующий шаг</button>
               <button class="step__button step__button--simple js-prev-step" type="button">На шаг назад</button>
             </div>
           </div>
@@ -408,7 +413,7 @@
             </div>
             <div class="step__controls">
               <button class="step__button button" type="submit">Отправить</button>
-              <button class="step__button step__button--simple js-prev-step" type="button">На шаг назад</button>
+              <button class="step__button step__button--simple js-prev-step" type="button" id="removeTextareaFields">На шаг назад</button>
             </div>
           </div>
         </form>

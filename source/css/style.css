@@ -558,10 +558,12 @@ svg {
   .base-input::placeholder {
     opacity: 0.3; }
 
-input::-webkit-outer-spin-button,
+input::-webkit-textfield-decoration-container,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
+  -webkit-appearance: none; }
+
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none; }
 
 .form {
   position: relative;
@@ -579,13 +581,14 @@ input::-webkit-inner-spin-button {
       border-top-left-radius: 60px;
       border-top-right-radius: 60px; } }
 
-@media (min-width: 768px) {
-  .form__container {
-    padding: 0 75px; } }
-
-@media (min-width: 1440px) {
-  .form__container {
-    padding: 0 60px; } }
+.form__container {
+  position: relative; }
+  @media (min-width: 768px) {
+    .form__container {
+      padding: 0 75px; } }
+  @media (min-width: 1440px) {
+    .form__container {
+      padding: 0 60px; } }
 
 .form__form {
   margin-top: 32px; }
@@ -594,19 +597,63 @@ input::-webkit-inner-spin-button {
       margin-top: 60px; } }
 
 .form__title {
-  margin-left: 25px;
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
   color: #1d2e5b; }
   @media (min-width: 768px) {
     .form__title {
-      margin-left: 73px;
       font-size: 36px;
       line-height: 36px; } }
+
+.form__indicators {
+  position: absolute;
+  right: 20px;
+  top: 3px;
+  display: flex; }
+  @media (min-width: 768px) {
+    .form__indicators {
+      right: 55px; } }
   @media (min-width: 1440px) {
-    .form__title {
-      margin-left: 130px; } }
+    .form__indicators {
+      top: 195px;
+      right: 220px;
+      flex-direction: column; } }
+
+.form__item {
+  position: relative;
+  display: flex;
+  padding-left: 20px;
+  font-size: 0;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase; }
+  .form__item::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    transform: translateY(-50%);
+    background-color: rgba(29, 46, 91, 0.6);
+    border-radius: 50%; }
+    @media (min-width: 768px) {
+      .form__item::before {
+        width: 6px;
+        height: 6px; } }
+  @media (min-width: 768px) {
+    .form__item {
+      padding-left: 30px; } }
+  @media (min-width: 1440px) {
+    .form__item {
+      margin-bottom: 15px;
+      font-size: 20px; } }
+  .form__item--active {
+    color: #000000; }
+    .form__item--active::before {
+      background-color: #1d2e5b; }
 
 .modal {
   position: absolute;
@@ -1303,6 +1350,7 @@ input::-webkit-inner-spin-button {
     z-index: 1;
     width: 35px;
     height: 24px;
+    background-size: 100%;
     background-repeat: no-repeat; }
     @media (min-width: 768px) {
       .destinations__card::before {
@@ -1402,6 +1450,7 @@ input::-webkit-inner-spin-button {
     height: 14px;
     background-image: url("../img/icons/icon-user.svg");
     background-repeat: no-repeat;
+    background-position: center;
     transform: translateY(-50%); }
     @media (min-width: 768px) {
       .destinations__views::before {
@@ -2728,6 +2777,7 @@ input::-webkit-inner-spin-button {
 .catalog__button {
   position: relative;
   padding-left: 29px;
+  height: 25px;
   font-family: inherit;
   font-size: 17px;
   font-weight: 700;
@@ -3891,9 +3941,10 @@ input::-webkit-inner-spin-button {
       justify-self: flex-end; } }
 
 .profile__label {
-  margin-top: 15px; }
+  margin-top: 20px; }
   @media (min-width: 1440px) {
     .profile__label {
+      margin-top: 15px;
       color: #ffffff; } }
 
 .profile__image {
@@ -4133,19 +4184,14 @@ input::-webkit-inner-spin-button {
       border-top-right-radius: 60px; } }
 
 .plans__title {
-  margin-left: 25px;
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
   color: #1d2e5b; }
   @media (min-width: 768px) {
     .plans__title {
-      margin-left: 73px;
       font-size: 36px;
       line-height: 36px; } }
-  @media (min-width: 1440px) {
-    .plans__title {
-      margin-left: 130px; } }
 
 .plans__container {
   margin-top: 32px; }
@@ -4156,6 +4202,9 @@ input::-webkit-inner-spin-button {
   @media (min-width: 1440px) {
     .plans__container {
       padding: 0 58px 0 58px; } }
+
+.plans__list {
+  margin-top: 60px; }
 
 .plans__plan {
   width: 100%;
@@ -4498,6 +4547,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
   border-radius: 5px;
   border: 1px solid #cbced9;
+  background-color: transparent;
   transition: all 0.3s ease; }
   .step__input-number:hover {
     border-color: #959bb2; }
@@ -4700,6 +4750,8 @@ input::-webkit-inner-spin-button {
   margin-top: 33px; }
 
 .step__input-date {
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding: 9px 30px 11px 30px;
   font-family: inherit;

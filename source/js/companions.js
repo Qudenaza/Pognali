@@ -1,11 +1,20 @@
 // Данный скриптовой файл предназначен для страницы catalog.html
 
-// ВЫБОР ГОРОДОВ ПО КНОПКАМ
-
+// Переменные
 const lettersWrapper = document.querySelector('.filtering__wrapper'),
       citiesContainer = document.querySelector('.filtering__content'),
-      filteringPremission = (window.innerWidth < 1439);
+      filteringPremission = (window.innerWidth < 1439),
+      filtering = document.querySelector('.filtering'),
+      likeButtons = document.querySelectorAll('.companion-card__like');
 
+// Попутчики
+const subtitlesPremission = (window.innerWidth >= 768 && 1440 > window.innerWidth),
+      selectSubtitles = document.querySelectorAll('.select__subtitle');
+
+
+// События
+
+// Этот блок кода проверяет размер экрана и решает вешать событие или нет. Само событие отвечает за переключение списка стран
 if (filteringPremission) {
   lettersWrapper.addEventListener('click', function(e) {
     const letters = document.querySelectorAll('.filtering__letter');
@@ -25,10 +34,7 @@ if (filteringPremission) {
 }
 
 
-// ПОПАП ФИЛЬТРАЦИИ ПО СТРАНАМ
-
-const filtering = document.querySelector('.filtering');
-
+// Это событие открывает попап выбора стран
 filtering.addEventListener('click', function(e) {
   if (e.target.classList.contains('filtering__close') || e.target.classList.contains('filtering__toggle')) {
     this.classList.toggle('filtering--expanded');
@@ -36,10 +42,7 @@ filtering.addEventListener('click', function(e) {
 });
 
 
-// КНОПКА ЛАЙКА
-
-const likeButtons = document.querySelectorAll('.companion-card__like');
-
+// Это событие отвечат за клик на кнопку лайка
 likeButtons.forEach(button => {
   button.addEventListener('click', function() {
     this.classList.toggle('companion-card__like--active');
@@ -47,11 +50,7 @@ likeButtons.forEach(button => {
 });
 
 
-// ВЫБОР ПОПУТЧИКОВ
-const subtitlesPremission = (window.innerWidth >= 768 && 1440 > window.innerWidth);
-
-const selectSubtitles = document.querySelectorAll('.select__subtitle');
-
+// Это событие отвечает за выбор попутчиков
 selectSubtitles.forEach(title => {
   if (!subtitlesPremission) {
     title.addEventListener('click', function(e) {
@@ -60,6 +59,8 @@ selectSubtitles.forEach(title => {
   }
 });
 
+
+// Эта функция отвечает за раскрытие блока с фильтрами
 function slideDown(e) {
   const elem = e.target,
         container = e.target.nextElementSibling;

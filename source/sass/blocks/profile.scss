@@ -113,9 +113,11 @@
 }
 
 .profile__label {
-  margin-top: 15px;
+  margin-top: 20px;
 
   @media (min-width: 1440px) {
+    margin-top: 15px;
+
     color: $basic-white;
   }
 }
